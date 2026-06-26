@@ -1,4 +1,12 @@
+"""Paper selection using LLM.
+
+Reads the fetched paper list from the cache, asks the LLM to choose the most
+interesting paper (returning a JSON object with ``index`` and ``reason``),
+and stores the selection in the cache.
+"""
+
 import logging
+from typing import Any
 
 from .cache import read_cache_json, write_cache_json
 from .llm import call_llm_json
@@ -7,7 +15,24 @@ from .utils import format_prompt
 logger = logging.getLogger(__name__)
 
 
-def step_select_paper(config):
+def step_select_paper(config: dict[str, Any]) -> dict[str, Any]:
+    """Run the paper-selection pipeline step.
+
+    Reads the fetched papers from the cache, sends them to the LLM with a
+    selection prompt, and persists the chosen paper (enriched with a
+    ``selection_reason`` key) as ``selected`` in the cache.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        The selected paper dict, enriched with a ``selection_reason`` key.
+
+    Raises:
+        KeyError: If no papers are available in the cache.
+        ValueError: If the LLM returns an out-of-bounds index or unexpected
+            JSON format.
+    """
     # If a unified paper cache exists and contains a selected paper, load it
     data = read_cache_json(config)
     if isinstance(data, dict) and "selected" in data:

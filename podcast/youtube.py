@@ -1,6 +1,13 @@
+"""YouTube upload via the resumable upload API.
+
+Handles OAuth token refresh and uploads the generated podcast video to
+YouTube using the resumable upload protocol.
+"""
+
 import json
 import logging
 import os
+from typing import Any
 
 import requests
 from .cache import read_cache_json, get_cache_path
@@ -8,7 +15,21 @@ from .cache import read_cache_json, get_cache_path
 logger = logging.getLogger(__name__)
 
 
-def step_upload_youtube(config):
+def step_upload_youtube(config: dict[str, Any]) -> None:
+    """Upload the podcast video to YouTube (CI-only step).
+
+    Refreshes the OAuth access token using the configured refresh token,
+    then performs a resumable upload of the video file.  The upload is
+    skipped entirely if YouTube credentials are not set in the environment.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Raises:
+        FileNotFoundError: If the video file does not exist.
+        KeyError: If no selected paper is found in the cache.
+        RuntimeError: If OAuth token refresh or video upload fails.
+    """
     if not config.get("is_github_run"):
         logger.info("Skipping YouTube upload for local run.")
         return

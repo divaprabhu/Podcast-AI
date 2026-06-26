@@ -1,4 +1,12 @@
+"""Chunk-based paper summarisation.
+
+Splits the full PDF text into manageable chunks, sends each chunk to an LLM
+for summarisation, and monitors the failure rate against a configurable
+threshold.
+"""
+
 import logging
+from typing import Any
 
 from .cache import read_cache_json, write_cache_json
 from .llm import call_llm
@@ -7,11 +15,18 @@ from .utils import format_prompt
 logger = logging.getLogger(__name__)
 
 
-def _find_split_point(text, max_chars):
-    """Find the best index to split ``text`` at or before ``max_chars``.
+def _find_split_point(text: str, max_chars: int) -> int:
+    """Find the best index to split *text* at or before *max_chars*.
 
     Priority order: sentence boundary, paragraph break, line break,
-    word boundary, hard cut.  Returns the end index of the first chunk.
+    word boundary, hard cut.
+
+    Args:
+        text: The text to split.
+        max_chars: Maximum length of the first chunk.
+
+    Returns:
+        The end index of the first chunk (exclusive).
     """
     if max_chars >= len(text):
         return len(text)
@@ -44,12 +59,19 @@ def _find_split_point(text, max_chars):
     return max_chars
 
 
-def _build_chunks(pages_text, chunk_size):
+def _build_chunks(pages_text: list[str], chunk_size: int) -> list[str]:
     """Split *pages_text* into chunks of at most *chunk_size* characters.
 
     Pages are joined into a buffer and flushed whenever adding another page
     would exceed the limit.  Large pages are split further using
     :func:`_find_split_point`.
+
+    Args:
+        pages_text: List of per-page text strings.
+        chunk_size: Maximum number of characters per chunk.
+
+    Returns:
+        List of text chunks.
     """
     chunks = []
     buffer = ""
@@ -79,8 +101,25 @@ def _build_chunks(pages_text, chunk_size):
     return chunks
 
 
-def _summarize_chunks(config, chunks, chunk_prompts, max_context):
-    """Call the LLM for each chunk and return ``(summaries, failed_count)``."""
+def _summarize_chunks(
+    config: dict[str, Any],
+    chunks: list[str],
+    chunk_prompts: dict[str, Any],
+    max_context: int,
+) -> tuple[list[str], int]:
+    """Call the LLM for each chunk and return summaries and failure count.
+
+    Args:
+        config: Runtime configuration dictionary.
+        chunks: List of text chunks to summarise.
+        chunk_prompts: Dict with ``system`` and ``user`` prompt templates.
+        max_context: Maximum context length used to compute per-chunk limit.
+
+    Returns:
+        A tuple ``(summaries, failed_count)`` where *summaries* contains a
+        string for each chunk (empty string on failure) and *failed_count* is
+        the number of chunks that could not be summarised.
+    """
     pipeline = config.get("llm", {}).get("pipeline", {})
     summary_provider = pipeline.get("summary", {}).get("provider")
     summary_model = pipeline.get("summary", {}).get("model")
@@ -114,8 +153,21 @@ def _summarize_chunks(config, chunks, chunk_prompts, max_context):
     return chunk_summaries, failed_chunks
 
 
-def _check_failure_threshold(failed_chunks, chunks, failure_threshold):
-    """Raise if the failure rate exceeds *failure_threshold*; else warn."""
+def _check_failure_threshold(
+    failed_chunks: int,
+    chunks: list[Any],
+    failure_threshold: float,
+) -> None:
+    """Raise if the failure rate exceeds *failure_threshold*; else warn.
+
+    Args:
+        failed_chunks: Number of chunks that failed summarisation.
+        chunks: Full list of chunks (used to compute the failure rate).
+        failure_threshold: Maximum allowable failure rate (0.0 – 1.0).
+
+    Raises:
+        RuntimeError: If the failure rate exceeds the threshold.
+    """
     if failed_chunks == 0:
         return
     failure_rate = failed_chunks / len(chunks)
@@ -134,7 +186,25 @@ def _check_failure_threshold(failed_chunks, chunks, failure_threshold):
     )
 
 
-def step_chunk_summary(config):
+def step_chunk_summary(config: dict[str, Any]) -> dict[str, Any]:
+    """Run the chunk-summary pipeline step.
+
+    Reads the selected paper from the cache, splits its PDF text into chunks,
+    sends each chunk to an LLM for summarisation, and persists the results
+    back to the cache.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        The paper dict enriched with ``chunks`` and ``chunk_summaries`` lists.
+
+    Raises:
+        KeyError: If no selected paper is found in the cache.
+        ValueError: If no extracted pages are available or chunks are empty.
+        RuntimeError: If the chunk failure rate exceeds the configured
+            threshold.
+    """
     data = read_cache_json(config)
     if isinstance(data, dict) and "selected" in data:
         paper = data["selected"]

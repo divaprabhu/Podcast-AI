@@ -1,7 +1,17 @@
+"""Generate TTS audio from a podcast script using edge-tts.
+
+Splits the script into per-turn MP3 chunks, concatenates them via FFmpeg,
+and handles resume (skipping already-generated chunks) as well as retry
+logic for transient TTS failures.
+"""
+
 import asyncio
 import logging
 import os
 import subprocess
+from collections.abc import Sequence
+from typing import Any
+
 import edge_tts
 
 from .cache import read_cache_json, get_cache_dir, get_cache_path
@@ -9,7 +19,31 @@ from .cache import read_cache_json, get_cache_dir, get_cache_path
 logger = logging.getLogger(__name__)
 
 
-async def _amake_audio(script, cache_dir, config, output_mp3):
+async def _amake_audio(
+    script: Sequence[dict[str, str]],
+    cache_dir: str,
+    config: dict[str, Any],
+    output_mp3: str,
+) -> None:
+    """Generate TTS audio for the given script and write it to *output_mp3*.
+
+    Each turn in *script* is rendered as a separate MP3 chunk.  Chunks that
+    already exist on disk (from a previous interrupted run) are skipped.
+    All chunks are then concatenated with FFmpeg into the final MP3 file.
+
+    Args:
+        script: Sequence of turn dicts with ``host`` (``"Male"`` or
+            ``"Female"``) and ``text`` keys.
+        cache_dir: Base cache directory where an ``audio_chunks/`` subdirectory
+            is created.
+        config: Runtime configuration.  Used to look up voice settings and
+            TTS timeout / sleep parameters.
+        output_mp3: Destination path for the concatenated MP3 file.
+
+    Raises:
+        RuntimeError: If a TTS call produces an empty or missing file.
+        asyncio.TimeoutError: If the TTS request times out after retries.
+    """
     chunks_dir = os.path.join(cache_dir, "audio_chunks")
     os.makedirs(chunks_dir, exist_ok=True)
 
@@ -124,7 +158,22 @@ async def _amake_audio(script, cache_dir, config, output_mp3):
     )
 
 
-def step_generate_audio(config):
+def step_generate_audio(config: dict[str, Any]) -> str:
+    """Generate the podcast audio file from the cached script.
+
+    If the audio file already exists in the cache it is returned immediately.
+    Otherwise, the script turns are rendered via edge-tts and concatenated
+    into a single MP3.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        Absolute path to the generated (or cached) MP3 file.
+
+    Raises:
+        KeyError: If no selected paper or script is found in the cache.
+    """
     data = read_cache_json(config)
     if not isinstance(data, dict) or "selected" not in data:
         raise KeyError("No selected paper found in cache")

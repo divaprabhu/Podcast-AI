@@ -1,6 +1,14 @@
+"""LLM provider dispatch.
+
+Routes calls to the configured provider module, handles retry logic, and
+provides JSON-safe output parsing.
+"""
+
 import json
 import logging
 import time
+from collections.abc import Callable
+from typing import Any
 
 from . import openrouter
 from . import github
@@ -11,20 +19,58 @@ from . import ollama_cloud
 logger = logging.getLogger(__name__)
 
 
-def _get_sleep(config):
+def _get_sleep(config: dict[str, Any]) -> int:
+    """Return the sleep interval (in seconds) between retry attempts.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        Sleep duration in seconds (default 10).
+    """
     return config.get("llm", {}).get("default", {}).get("sleep", 10)
 
 
-_PROVIDERS = {
+_PROVIDERS: dict[str, Any] = {
     "openrouter": openrouter,
     "github": github,
     "ollama": ollama,
     "lm_studio": lm_studio,
-    "ollama_cloud": ollama_cloud
+    "ollama_cloud": ollama_cloud,
 }
 
 
-def call_llm(config, system_prompt, user_prompt, provider=None, model=None, response_format=None):
+def call_llm(
+    config: dict[str, Any],
+    system_prompt: str,
+    user_prompt: str,
+    provider: str | None = None,
+    model: str | None = None,
+    response_format: dict[str, Any] | None = None,
+) -> str:
+    """Call an LLM provider with retry logic and return the response text.
+
+    Resolves the provider and model from the config or supplied arguments,
+    delegates to the corresponding provider module, and retries once on
+    failure after a configurable sleep.
+
+    Args:
+        config: Runtime configuration dictionary.
+        system_prompt: System message content.
+        user_prompt: User message content.
+        provider: Provider name override (e.g. ``"openrouter"``).  If unset,
+            the default provider from config is used.
+        model: Model name override.  If unset, the default model from config
+            is used.
+        response_format: Optional JSON schema or ``"json"`` string to
+            constrain the response format.
+
+    Returns:
+        The LLM response text.
+
+    Raises:
+        ValueError: If provider or model cannot be resolved.
+    """
     global_provider = config.get("llm", {}).get("default", {}).get("provider")
     if global_provider:
         resolved_provider = global_provider.lower()
@@ -72,7 +118,19 @@ def call_llm(config, system_prompt, user_prompt, provider=None, model=None, resp
             raise
 
 
-def safe_json_load(text):
+def safe_json_load(text: str) -> Any:
+    """Parse JSON from an LLM response, stripping markdown fences if present.
+
+    Args:
+        text: Raw LLM response that may contain JSON embedded in markdown
+            code blocks.
+
+    Returns:
+        Decoded JSON data.
+
+    Raises:
+        json.JSONDecodeError: If the text cannot be parsed as JSON.
+    """
     text = text.strip()
     start = text.find("```")
     if start != -1:
@@ -89,7 +147,34 @@ def safe_json_load(text):
     return json.loads(text.strip())
 
 
-def call_llm_json(config, system_prompt, user_prompt, provider=None, model=None, response_format=None):
+def call_llm_json(
+    config: dict[str, Any],
+    system_prompt: str,
+    user_prompt: str,
+    provider: str | None = None,
+    model: str | None = None,
+    response_format: dict[str, Any] | None = None,
+) -> Any:
+    """Call the LLM and parse the response as JSON, retrying on parse errors.
+
+    Attempts the LLM call via :func:`call_llm` and parses the output with
+    :func:`safe_json_load`.  If JSON parsing fails, retries once after a
+    configurable sleep.
+
+    Args:
+        config: Runtime configuration dictionary.
+        system_prompt: System message content.
+        user_prompt: User message content.
+        provider: Provider name override.
+        model: Model name override.
+        response_format: Optional JSON schema or ``"json"`` string.
+
+    Returns:
+        Decoded JSON data.
+
+    Raises:
+        json.JSONDecodeError: If parsing fails on the second attempt.
+    """
     for attempt in range(2):
         try:
             raw_output = call_llm(

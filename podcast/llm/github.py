@@ -1,5 +1,12 @@
+"""GitHub Models LLM provider.
+
+Wraps the GitHub Models inference API (OpenAI-compatible chat completions
+endpoint).
+"""
+
 import logging
 import os
+from typing import Any
 
 import requests
 
@@ -7,10 +14,34 @@ from ._format import get_openai_response_format as _get_openai_response_format
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_BASE_URL = "https://models.github.ai"
+DEFAULT_BASE_URL: str = "https://models.github.ai"
 
 
-def call(config, system_prompt, user_prompt, model, response_format):
+def call(
+    config: dict[str, Any],
+    system_prompt: str,
+    user_prompt: str,
+    model: str,
+    response_format: dict[str, Any] | str | None,
+) -> tuple[str, dict[str, Any]]:
+    """Send a chat completion request to GitHub Models.
+
+    Args:
+        config: Runtime configuration dictionary.
+        system_prompt: System message content.
+        user_prompt: User message content.
+        model: Model identifier string.
+        response_format: Optional response-format constraint (JSON schema
+            dict or ``"json"`` string).
+
+    Returns:
+        A tuple ``(content, usage)`` where *content* is the response text
+        and *usage* is a dict of token-usage statistics.
+
+    Raises:
+        ValueError: If ``GH_API_KEY`` is not set in the environment.
+        requests.RequestException: On API error.
+    """
     api_key = os.getenv("GH_API_KEY")
     if not api_key:
         raise ValueError("GH_API_KEY missing from environment.")

@@ -1,7 +1,14 @@
+"""RSS feed generation.
+
+Creates an RSS 2.0 feed (with iTunes namespace extensions) from the episode
+history and configuration, writing it to ``feed.xml``.
+"""
+
 import logging
 import os
 import xml.sax.saxutils as saxutils
 from datetime import datetime, timezone
+from typing import Any
 
 from .cache import read_cache_json, get_cache_path
 from .episodes import load_episodes
@@ -9,7 +16,21 @@ from .episodes import load_episodes
 logger = logging.getLogger(__name__)
 
 
-def step_generate_rss(config):
+def step_generate_rss(config: dict[str, Any]) -> None:
+    """Generate an RSS feed XML file (``feed.xml``) from the episode list.
+
+    In CI mode, the feed is built from the persistent ``episodes.json``;
+    otherwise it is built from the single locally-cached paper.
+
+    Args:
+        config: Runtime configuration dictionary.  Requires
+            ``output.release_base_url`` and ``output.feed_base_url`` keys
+            in the configuration.
+
+    Raises:
+        ValueError: If ``output.release_base_url`` or
+            ``output.feed_base_url`` are not configured.
+    """
     rss_file = "feed.xml"
     show_title = config["podcast"]["show_name"]
     show_desc = config["podcast"]["show_description"]

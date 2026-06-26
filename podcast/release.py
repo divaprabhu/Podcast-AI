@@ -1,7 +1,14 @@
+"""Release preparation.
+
+Copies the generated audio and cache data to timestamped release files,
+updates the episode history, and prepares assets for publishing.
+"""
+
 import logging
 import os
 import shutil
 from datetime import datetime, timezone
+from typing import Any
 
 from .cache import get_cache_path, read_cache_json
 from .episodes import load_episodes, save_episodes
@@ -9,7 +16,23 @@ from .episodes import load_episodes, save_episodes
 logger = logging.getLogger(__name__)
 
 
-def step_prepare_release(config):
+def step_prepare_release(config: dict[str, Any]) -> str:
+    """Prepare the podcast release: copy assets and update episode history.
+
+    Creates timestamped copies of the audio file and selected-paper cache,
+    appends an entry to ``episodes.json``, and returns the unique audio
+    filename.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        The unique audio filename (e.g. ``"podcast_202503311430.mp3"``).
+
+    Raises:
+        FileNotFoundError: If the generated audio or cache file is missing.
+        KeyError: If no selected paper is found in the cache.
+    """
     if not config.get("is_github_run"):
         logger.warning("Release step should only be run in CI.")
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")

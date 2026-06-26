@@ -1,8 +1,15 @@
+"""Entrypoint for the Podcast-AI CLI.
+
+Parses command-line arguments, loads runtime configuration, and orchestrates
+the full podcast-production pipeline or a single isolated pipeline step.
+"""
+
 import argparse
 import logging
 import os
 import sys
 from datetime import datetime, timezone
+from typing import Any
 
 from dotenv import load_dotenv
 
@@ -48,6 +55,11 @@ STEPS = list(STEP_HANDLERS)
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse and return CLI arguments.
+
+    Returns:
+        Parsed argument namespace with an optional ``step`` attribute.
+    """
     parser = argparse.ArgumentParser(
         description="Automated AI Paper Podcast Studio"
     )
@@ -60,7 +72,17 @@ def parse_args() -> argparse.Namespace:
     return args
 
 
-def run_all(config):
+def run_all(config: dict[str, Any]) -> None:
+    """Execute every pipeline step in sequence.
+
+    Runs the core content-production steps unconditionally, then conditionally
+    executes release, RSS, and YouTube upload when running inside GitHub
+    Actions (``config["is_github_run"]`` is ``True``).
+
+    Args:
+        config: Runtime configuration dictionary loaded from ``config.json``
+            and augmented with ``run_number`` and ``is_github_run``.
+    """
     logger.info("Executing complete pipeline sequentially...")
     arxiv.step_fetch_arxiv(config)
     selection.step_select_paper(config)
@@ -77,7 +99,13 @@ def run_all(config):
         youtube.step_upload_youtube(config)
 
 
-def main():
+def main() -> None:
+    """CLI entry point for Podcast-AI.
+
+    Loads configuration, resolves the requested pipeline step (or runs the
+    full pipeline if no step is specified), and exits with a non-zero status
+    code on failure.
+    """
     args = parse_args()
 
     config = load_config()

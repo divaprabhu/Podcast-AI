@@ -1,5 +1,13 @@
+"""PDF download and text extraction.
+
+Downloads the PDF for the selected arXiv paper (with retry logic), extracts
+per-page text via ``pypdf``, and caches both the raw PDF and the extracted
+pages in the pipeline cache.
+"""
+
 import logging
 import os
+from typing import Any
 
 import requests
 
@@ -8,8 +16,18 @@ from .cache import get_cache_dir, read_cache_json, write_cache_json
 logger = logging.getLogger(__name__)
 
 
-def _get_paper_from_cache(data):
-    """Return the selected paper dict from the unified cache data."""
+def _get_paper_from_cache(data: dict[str, Any]) -> dict[str, Any]:
+    """Return the selected paper dict from the unified cache data.
+
+    Args:
+        data: The full cache dictionary.
+
+    Returns:
+        The selected paper dictionary.
+
+    Raises:
+        KeyError: If no paper has been selected yet.
+    """
     if isinstance(data, dict) and data.get("selected"):
         return data["selected"]
     raise KeyError(
@@ -17,8 +35,16 @@ def _get_paper_from_cache(data):
     )
 
 
-def _download_pdf(pdf_url, pdf_cache_path):
-    """Download *pdf_url* to *pdf_cache_path*, retrying once on failure."""
+def _download_pdf(pdf_url: str, pdf_cache_path: str) -> None:
+    """Download *pdf_url* to *pdf_cache_path*, retrying once on failure.
+
+    Args:
+        pdf_url: URL of the PDF to download.
+        pdf_cache_path: Local filesystem path where the PDF will be saved.
+
+    Raises:
+        requests.RequestException: If both download attempts fail.
+    """
     logger.info(f"Downloading PDF from arXiv: {pdf_url}")
     for attempt in range(2):
         try:
@@ -39,8 +65,15 @@ def _download_pdf(pdf_url, pdf_cache_path):
             )
 
 
-def _extract_pages(pdf_cache_path):
-    """Extract per-page text from *pdf_cache_path* using pypdf."""
+def _extract_pages(pdf_cache_path: str) -> list[str]:
+    """Extract per-page text from *pdf_cache_path* using pypdf.
+
+    Args:
+        pdf_cache_path: Path to the cached PDF file.
+
+    Returns:
+        List of text strings, one per page.
+    """
     try:
         from pypdf import PdfReader
 
@@ -59,7 +92,24 @@ def _extract_pages(pdf_cache_path):
         raise
 
 
-def step_pdf(config):
+def step_pdf(config: dict[str, Any]) -> dict[str, Any]:
+    """Run the PDF-download and extraction pipeline step.
+
+    Reads the selected paper from the cache, downloads its PDF (if not
+    already cached), extracts per-page text via ``pypdf``, and persists
+    the enriched paper data back to the cache.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        The paper dict enriched with ``pdf_url``, ``pdf_cache_path``, and
+        ``pages_text`` keys.
+
+    Raises:
+        KeyError: If no selected paper is found in the cache.
+        ValueError: If the paper has no ``id`` field.
+    """
     data = read_cache_json(config)
 
     # Return early if pages are already cached.

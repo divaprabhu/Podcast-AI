@@ -1,4 +1,11 @@
+"""Final condensation of chunk summaries.
+
+Combines all per-chunk summaries into a single, coherent overview of the
+paper by calling the LLM once more with the aggregated text.
+"""
+
 import logging
+from typing import Any
 
 from .cache import read_cache_json, write_cache_json
 from .llm import call_llm
@@ -7,7 +14,24 @@ from .utils import format_prompt
 logger = logging.getLogger(__name__)
 
 
-def step_final_summary(config):
+def step_final_summary(config: dict[str, Any]) -> dict[str, Any]:
+    """Run the final-summary pipeline step.
+
+    Combines all chunk summaries from the cache into a single prompt and
+    calls the LLM to produce a condensed overview.  The result is stored
+    as ``content_summary`` on the selected paper.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        The paper dict enriched with the ``content_summary`` key.
+
+    Raises:
+        KeyError: If no selected paper or chunk summaries are found in the
+            cache.
+        ValueError: If the combined summaries are empty.
+    """
     data = read_cache_json(config)
     if isinstance(data, dict) and "selected" in data:
         paper = data.get("selected")

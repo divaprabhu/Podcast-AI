@@ -1,4 +1,11 @@
+"""Podcast script generation.
+
+Produces a turn-by-turn podcast script by calling the LLM with the paper
+summary and wrapping the result in deterministic intro / CTA / outro turns.
+"""
+
 import logging
+from typing import Any
 
 from .cache import read_cache_json, write_cache_json
 from .llm import call_llm_json
@@ -7,13 +14,25 @@ from .utils import format_prompt
 logger = logging.getLogger(__name__)
 
 
-def _normalize_host_fields(script_data, host_male, host_female):
-    """Normalize host field values to 'Male' or 'Female'.
+def _normalize_host_fields(
+    script_data: list[dict[str, str]],
+    host_male: str,
+    host_female: str,
+) -> list[dict[str, str]]:
+    """Normalise host field values to ``'Male'`` or ``'Female'``.
 
-    Accepts the configured host names (e.g. 'Alex', 'Maya'), case-insensitive
-    variants, or the literal strings 'Male'/'Female'. Logs a warning for any
-    value that cannot be mapped and leaves it unchanged so callers can detect
-    the problem.
+    Accepts the configured host names (e.g. ``'Alex'``, ``'Maya'``),
+    case-insensitive variants, or the literal strings ``'Male'`` /
+    ``'Female'``.  Logs a warning for any value that cannot be mapped and
+    leaves it unchanged so callers can detect the problem.
+
+    Args:
+        script_data: List of turn dicts with a ``host`` key.
+        host_male: Configured name of the male host.
+        host_female: Configured name of the female host.
+
+    Returns:
+        The same list with canonicalised ``host`` values.
     """
     male_aliases = {"male", host_male.lower()}
     female_aliases = {"female", host_female.lower()}
@@ -33,8 +52,15 @@ def _normalize_host_fields(script_data, host_male, host_female):
     return script_data
 
 
-def _build_intro(config):
-    """Return fixed intro turns: Male introduces the show, Female confirms."""
+def _build_intro(config: dict[str, Any]) -> list[dict[str, str]]:
+    """Return fixed intro turns: Male introduces the show, Female confirms.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        A list of two introductory turns.
+    """
     show_name = config["podcast"]["show_name"]
     host_male = config["podcast"]["hosts"]["male"]
     host_female = config["podcast"]["hosts"]["female"]
@@ -44,8 +70,15 @@ def _build_intro(config):
     ]
 
 
-def _build_cta(config):
-    """Return a fixed mid-episode CTA turn."""
+def _build_cta(config: dict[str, Any]) -> dict[str, str]:
+    """Return a fixed mid-episode CTA turn.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        A single turn dict with ``host`` and ``text`` keys.
+    """
     show_name = config["podcast"]["show_name"]
     return {
         "host": "Female",
@@ -57,8 +90,16 @@ def _build_cta(config):
     }
 
 
-def _build_outro(config, authors_str):
-    """Return a fixed outro/credits turn."""
+def _build_outro(config: dict[str, Any], authors_str: str) -> dict[str, str]:
+    """Return a fixed outro/credits turn.
+
+    Args:
+        config: Runtime configuration dictionary.
+        authors_str: Comma-separated author names to credit.
+
+    Returns:
+        A single turn dict with ``host`` and ``text`` keys.
+    """
     show_name = config["podcast"]["show_name"]
     return {
         "host": "Male",
@@ -66,7 +107,24 @@ def _build_outro(config, authors_str):
     }
 
 
-def step_generate_script(config):
+def step_generate_script(config: dict[str, Any]) -> list[dict[str, str]]:
+    """Run the script-generation pipeline step.
+
+    Reads the selected paper and its final summary from the cache, calls
+    the LLM for a JSON array of turns, normalises host fields, and wraps
+    the result with intro / CTA / outro turns.
+
+    Args:
+        config: Runtime configuration dictionary.
+
+    Returns:
+        A list of turn dicts, each with ``host`` and ``text`` keys,
+        representing the full podcast script.
+
+    Raises:
+        KeyError: If no selected paper is found in the cache.
+        ValueError: If no content summary is available.
+    """
     data = read_cache_json(config)
     if not isinstance(data, dict) or "selected" not in data:
         raise KeyError("No selected paper found in cache")

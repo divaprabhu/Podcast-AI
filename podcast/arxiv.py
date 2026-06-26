@@ -1,13 +1,40 @@
+"""Fetch recent AI paper metadata from the arXiv Atom API.
+
+Queries the arXiv API for the latest papers in a configured category,
+parses the XML response, and persists the results to the shared cache.
+"""
+
 import logging
 import urllib.request
 import xml.etree.ElementTree as ET
+from typing import Any
 
 from .cache import read_cache_json, write_cache_json
 
 logger = logging.getLogger(__name__)
 
 
-def step_fetch_arxiv(config):
+def step_fetch_arxiv(config: dict[str, Any]) -> list[dict[str, Any]]:
+    """Fetch the latest papers from arXiv and store them in the cache.
+
+    If papers are already present in the cache they are returned immediately
+    without making a network request. Otherwise, the arXiv Atom API is queried
+    and the results are parsed and written to the cache before being returned.
+
+    Args:
+        config: Runtime configuration dictionary. Relevant keys:
+            ``config["paper"]["fetch"]["arxiv_category"]`` — arXiv category
+            string (e.g. ``"cs.AI"``).
+            ``config["paper"]["fetch"]["num_latest_papers"]`` — maximum number
+            of papers to fetch.
+
+    Returns:
+        A list of paper dicts, each containing ``title``, ``summary``, ``id``,
+        ``published``, and ``authors`` keys.
+
+    Raises:
+        RuntimeError: If the arXiv API returns invalid XML.
+    """
     data = read_cache_json(config)
     if isinstance(data, dict) and "papers" in data:
         logger.info("Loading papers from cache.")

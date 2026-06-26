@@ -1,4 +1,11 @@
+"""LM Studio LLM provider.
+
+Wraps the local LM Studio inference server (OpenAI-compatible chat
+completions endpoint).
+"""
+
 import logging
+from typing import Any
 
 import requests
 
@@ -6,10 +13,33 @@ from ._format import get_openai_response_format as _get_openai_response_format
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_BASE_URL = "http://localhost:1234"
+DEFAULT_BASE_URL: str = "http://localhost:1234"
 
 
-def call(config, system_prompt, user_prompt, model, response_format):
+def call(
+    config: dict[str, Any],
+    system_prompt: str,
+    user_prompt: str,
+    model: str,
+    response_format: dict[str, Any] | str | None,
+) -> tuple[str, dict[str, Any]]:
+    """Send a chat completion request to a local LM Studio instance.
+
+    Args:
+        config: Runtime configuration dictionary.
+        system_prompt: System message content.
+        user_prompt: User message content.
+        model: Model identifier string.
+        response_format: Optional response-format constraint (JSON schema
+            dict or ``"json"`` string).
+
+    Returns:
+        A tuple ``(content, usage)`` where *content* is the response text
+        and *usage* is a dict of token-usage statistics.
+
+    Raises:
+        requests.RequestException: On API error.
+    """
     base_url = config.get("llm", {}).get("providers", {}).get("lm_studio", {}).get("base_url", DEFAULT_BASE_URL).rstrip("/")
     api_url = f"{base_url}/v1/chat/completions"
 
