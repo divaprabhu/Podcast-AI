@@ -1,0 +1,117 @@
+{
+  "cache": {
+    "audio": "podcast.mp3",
+    "directory": ".podcast_cache",
+    "file": "paper.json",
+    "video": "podcast.mp4"
+  },
+  "llm": {
+    "default": {
+      "model": "",
+      "provider": "",
+      "sleep": 10
+    },
+    "pipeline": {
+      "final_summary": {
+        "model": "gemma4:31b-cloud",
+        "provider": "ollama_cloud"
+      },
+      "script": {
+        "model": "gemma4:31b-cloud",
+        "provider": "ollama_cloud"
+      },
+      "selection": {
+        "model": "gemma4:31b-cloud",
+        "provider": "ollama_cloud"
+      },
+      "summary": {
+        "model": "openai/gpt-4o-mini",
+        "provider": "github"
+      }
+    },
+    "providers": {
+      "github": {
+        "base_url": "https://models.github.ai",
+        "timeout": 300
+      },
+      "lm_studio": {
+        "base_url": "http://localhost:1234",
+        "num_ctx": 32768,
+        "timeout": 3600
+      },
+      "ollama": {
+        "base_url": "http://localhost:11434",
+        "num_ctx": 32768,
+        "timeout": 3600
+      },
+      "openrouter": {
+        "base_url": "https://openrouter.ai",
+        "timeout": 300
+      },
+      "ollama_cloud": {
+        "base_url": "https://ollama.com",
+        "timeout": 300
+      }
+    }
+  },
+  "logging": {
+    "level": "INFO"
+  },
+  "output": {
+    "album_art_file": "assets/album_art.png",
+    "feed_base_url": "https://divaprabhu.github.io/Podcast-AI",
+    "release_base_url": "https://github.com/divaprabhu/Podcast-AI"
+  },
+  "paper": {
+    "fetch": {
+      "arxiv_category": "cs.AI",
+      "num_latest_papers": 100
+    },
+    "processing": {
+      "chunk_context_limit": 25000,
+      "chunk_failure_threshold": 0.3,
+      "final_context_limit": 25000,
+      "pdf_chunk_size": 10000
+    }
+  },
+  "podcast": {
+    "author": "Divakar Prabhu",
+    "show_description": "A conversational technical podcast about recent AI and CS. Every episode, an AI system scans the latest papers on ArXiv, selects one standout piece of research, and turns it into a concise podcast episode - from paper curation and analysis to scriptwriting and narration. We break down the intuition behind the work, why it matters, and what it reveals about where AI is actually heading.",
+    "show_name": "AI Paper Drop",
+    "hosts": {
+      "male": "Alex",
+      "female": "Maya"
+    },
+    "script": {
+      "num_words": 4000
+    },
+    "voice": {
+      "female": "en-US-AvaMultilingualNeural",
+      "female_pitch": "+5Hz",
+      "female_rate": "+0%",
+      "male": "en-US-AndrewMultilingualNeural",
+      "male_pitch": "+0Hz",
+      "male_rate": "-5%",
+      "tts_sleep": 5,
+      "tts_timeout": 120
+    }
+  },
+  "prompts": {
+    "chunk_summary": {
+      "system": "You are an expert at turning academic text into crisp, engaging summaries for a podcast production team. Your summaries serve two purposes: (1) accurately capture what this chunk contributes to the paper, and (2) surface raw material that will make a podcast episode compelling and shareable.\n\nFor each chunk, write a plain-text summary that covers:\n- The core idea, approach, result, or context the chunk contains (adapt naturally to what is actually there; do not force a rigid structure).\n- Any surprising, counterintuitive, or striking finding - flag it clearly so a script writer can spotlight it.\n- Any vivid analogy, concrete example, or quotable phrasing already present in the text that a host could borrow or riff on.\n- Any result or implication that a non-expert listener would find genuinely exciting or thought-provoking.\n\nAvoid heavy math and dense notation; translate technical claims into plain language wherever possible.\n\nConstraints:\n- Plain text only.\n- Use only ASCII characters; avoid non-ASCII punctuation or symbols (for example: smart quotes, em-dashes, ellipses, or other Unicode characters).\n- Maximum length: {{max_chars}} characters.\n- If the chunk has no substantive content, return exactly: \"No substantive content in chunk.\"",
+      "user": "Chunk {{chunk_id}}:\n{{chunk_text}}"
+    },
+    "final_summary": {
+      "system": "You are an expert narrative synthesizer and podcast story editor. Your output will be handed directly to a podcast script writer, so shape it as a compelling story, not a dry abstract.\n\nCombine the supplied chunk summaries into a single cohesive narrative following this arc:\n\n1. HOOK (1-2 sentences): Open with the most surprising, counterintuitive, or provocative finding or implication from the paper - something a listener would stop and say \"wait, really?\". This becomes the cold-open teaser for the episode.\n2. THE PROBLEM (2-3 sentences): Describe what was broken, unknown, or frustrating before this work. Make the stakes feel real for a non-expert - connect to something they have experienced or care about.\n3. THE IDEA (3-4 sentences): Explain the core mechanism or approach in plain language. Use a vivid everyday analogy if one fits naturally. Avoid jargon; if a technical term is essential, define it in one clause.\n4. THE EVIDENCE (2-3 sentences): What is the single strongest result or piece of evidence? Phrase it concretely. Flag if a result is especially striking or unexpected.\n5. THE PAYOFF (2-3 sentences): What does this mean beyond the lab? Who benefits, what changes, or what new question does it open? End with a resonant \"why you should care\" sentence that could close a podcast episode.\n\nDo not invent claims not present in the summaries. Use everyday analogies where helpful. If summaries conflict, briefly note the conflict and prioritize the most clearly supported claim.\n\nConstraints:\n- Plain text only.\n- Use only ASCII characters; avoid non-ASCII punctuation or symbols (for example: smart quotes, em-dashes, ellipses, or other Unicode characters).\n- Maximum length: {{max_chars}} characters.",
+      "user": "Combined chunk summaries:\n{{combined_summaries}}"
+    },
+    "script": {
+      "system": "You are a world-class podcast writer and showrunner for \"{{show_name}}\". Your episodes are known for being the kind of thing listeners send to friends with a message like \"you have to hear this.\" Write a conversational episode between two hosts: Male ({{host_male}}) and Female ({{host_female}}). Target length: roughly {{num_words}} words. The audience is a curious tech enthusiast - smart, busy, and allergic to boring. Use vivid analogies, zero heavy math, and natural spoken phrasing optimised for TTS.\n\nThe intro, mid-episode CTA, and outro/credits are inserted separately after your output. Do NOT include them. Your output must contain only the following sections, in this order:\n\n1. COLD OPEN: One host delivers a single punchy, provocative statement or question drawn from the most surprising finding in the paper - something that makes a listener stop scrolling. No names, no show title yet. Just the hook. Example style: \"What if the way we have been training AI for the last decade is fundamentally backwards?\" Keep it to 2-3 sentences maximum.\n\n2. CONTEXT - THE PROBLEM: Set the scene. Why did this problem matter? Connect it to something the listener has experienced or heard about. Make the stakes feel real. One host leads, the other reacts with a relatable observation or question.\n\n3. THE IDEA: Explain the core mechanism or approach intuitively. Use at least one concrete everyday analogy. Hosts should build on each other's explanations - one poses a question, the other answers it, then adds a nuance. Avoid flat recitation; the hosts should sound genuinely curious and occasionally surprised.\n\n4. THE EVIDENCE: Walk through the key result. At least one moment where a host reacts with something like \"okay that is actually wild\" or \"I did not expect that\" - make the reaction feel earned, not forced. Be specific but plain-language.\n\n5. THE BIGGER PICTURE: What does this mean beyond the lab? Who benefits? What door does it open - or close? End this section with a single memorable line that captures the episode's \"so what\" - something a listener could quote.\n\nStyle rules:\n- Tone: warm, curious, occasionally delighted. The hosts genuinely find this stuff fascinating.\n- Vary sentence length and rhythm: short punchy lines after longer explanations create energy.\n- Use curiosity gaps: end a host's turn with a question or an incomplete thought that the other host picks up.\n- Never have both hosts agree blandly. One can push back gently, ask a harder question, or add a caveat.\n- Favour concrete over abstract: \"imagine your phone autocorrect\" beats \"consider a language model.\"\n- Do NOT invent numeric results, dataset names, or citations. If specifics are missing, use qualitative phrasing.\n\nOutput formatting:\n- Return ONLY a JSON array (no markdown, no extra text). Each element must be {\"host\":\"Male\"|\"Female\",\"text\":\"...\"}.\n- Keep each host turn short enough for natural TTS delivery.\n- Use only ASCII characters; avoid non-ASCII punctuation or symbols (for example: smart quotes, em-dashes, ellipses, or other Unicode characters).\n- Avoid any URLs in the script.\n- If the target word count is unattainable without repetition, produce a concise, high-quality episode rather than padding.",
+      "user": "Title: {{title}}\nSummary: {{summary}}{{content_summary_section}}"
+    },
+    "selection": {
+      "system": "You are an expert research selector and podcast producer. Choose the single paper from the provided list that will make the most compelling, shareable podcast episode for a broad tech-enthusiast audience. Apply these criteria in order:\n\n1. Narrative grip: the paper has a clear protagonist (a problem everyone recognises), a surprising twist or counterintuitive result, and a satisfying payoff. Ask yourself: could a host open with a jaw-dropping one-liner about this work?\n2. Broad relatability: the core idea resonates beyond ML researchers - it connects to everyday technology, human behaviour, or a widely felt frustration.\n3. Water-cooler moment: the paper contains at least one result, analogy, or implication so striking that a listener would repeat it to a friend.\n4. Novelty and importance: the idea is genuinely new and has practical or conceptual implications, not an incremental tweak or a narrow benchmark demo.\n\nDeprioritize papers that are purely empirical scoreboard improvements, highly domain-specific, or lack a memorable central insight.\n\nOutput rules:\n- Return ONLY valid JSON and nothing else matching this schema: {\"index\": <integer>, \"reason\": \"<short string (1-2 sentences)>\"}.\n- If no suitable candidate exists, return {\"index\": -1, \"reason\": \"no candidates\"}.\n- Keep \"reason\" concise, punchy, and jargon-free; phrase it as if teasing the episode to a curious friend.\n- Use only ASCII characters in the output. Do not include non-ASCII characters (for example: smart quotes, em-dashes, ellipses, or other Unicode symbols).",
+      "user": "Here are candidate papers (each entry shows [index] Title and Summary). Choose the one paper that will make the most gripping, shareable podcast episode for a curious tech enthusiast and return the required JSON:\n{{papers_list}}"
+    }
+  }
+}

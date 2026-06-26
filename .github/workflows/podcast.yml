@@ -1,0 +1,89 @@
+name: Generate Daily AI Research Podcast
+
+on:
+  schedule:
+    - cron: '0 2 * * 1-5' # Executes weekdays
+  workflow_dispatch: # Allows manual pipeline triggering from the UI
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code Repository
+        uses: actions/checkout@v4
+
+      - name: Initialize System Environment Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Setup Python Runtime Environment Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install PyPI Packages
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            # Fallback to previous hard-coded packages if requirements.txt is not present
+            pip install requests python-dotenv edge-tts pypdf
+          fi
+
+      - name: Execute Complete Pipeline Matrix Execution
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+          GH_API_KEY: ${{ secrets.GH_API_KEY }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python main.py
+
+      - name: Persist Episode History to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add episodes.json
+          git commit -m "Update podcast episode history [skip ci]" || echo "No changes to commit"
+          git push
+
+      - name: Set Release Date
+        run: echo "RELEASE_DATE=$(date +%Y%m%d)" >> $GITHUB_ENV
+
+      - name: Upload Artifacts to GitHub Releases Container Context
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: podcast-${{ env.RELEASE_DATE }}
+          name: Podcast Episode ${{ env.RELEASE_DATE }}
+          files: |
+            podcast_*.mp3
+            paper_*.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Package Target Deployment Directory Asset Structure
+        run: |
+          mkdir -p public/assets
+          cp feed.xml public/
+          if [ -f assets/album_art.png ]; then cp assets/album_art.png public/assets/; fi
+
+      - name: Setup Github Pages Deployment Engine Environment
+        uses: actions/configure-pages@v4
+
+      - name: Stream Target Artifact Bundle to Cloud Architecture Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy Production Output Vector Stream
+        uses: actions/deploy-pages@v4
