@@ -8,5 +8,15 @@
     "tag": "podcast-20260626",
     "guid": "http://arxiv.org/abs/2606.27287v1",
     "size": 2277021
+  },
+  {
+    "title": "Agentic AI-Powered Re-Identification: An Emerging, Scalable Threat to Mobility Microdata Privacy",
+    "description": "Imagine an AI agent that can dox you just by looking at your raw GPS coordinates and searching the web. This paper turns the 'anonymity' of location data into a terrifying reality.",
+    "pubDate": "Mon, 29 Jun 2026 06:54:45 +0000",
+    "filename": "podcast_202606290654.mp3",
+    "selected_json": "paper_202606290654.json",
+    "tag": "podcast-20260629",
+    "guid": "http://arxiv.org/abs/2606.27936v1",
+    "size": 2337789
   }
 ]
