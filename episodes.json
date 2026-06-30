@@ -18,5 +18,15 @@
     "tag": "podcast-20260629",
     "guid": "http://arxiv.org/abs/2606.27936v1",
     "size": 2337789
+  },
+  {
+    "title": "MirrorCode: AI can rebuild entire programs from behavior alone",
+    "description": "AI can now rebuild entire complex software projects from scratch just by watching how they behave\u2014no source code required.",
+    "pubDate": "Tue, 30 Jun 2026 06:23:22 +0000",
+    "filename": "podcast_202606300623.mp3",
+    "selected_json": "paper_202606300623.json",
+    "tag": "podcast-20260630",
+    "guid": "http://arxiv.org/abs/2606.30182v1",
+    "size": 2779437
   }
 ]
