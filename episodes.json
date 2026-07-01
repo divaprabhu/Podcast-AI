@@ -28,5 +28,15 @@
     "tag": "podcast-20260630",
     "guid": "http://arxiv.org/abs/2606.30182v1",
     "size": 2779437
+  },
+  {
+    "title": "Introspective Coupling: Self-Explanation Training Tracks Behavioral Change Despite Fixed Supervision",
+    "description": "Can an AI learn to be honest about its own mistakes using a frozen dataset? This paper reveals a surprising 'introspective coupling' where models track their own behavior shifts even when their training labels are outdated.",
+    "pubDate": "Wed, 01 Jul 2026 06:36:52 +0000",
+    "filename": "podcast_202607010636.mp3",
+    "selected_json": "paper_202607010636.json",
+    "tag": "podcast-20260701",
+    "guid": "http://arxiv.org/abs/2606.32038v1",
+    "size": 2277021
   }
 ]
