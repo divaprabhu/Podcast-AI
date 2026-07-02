@@ -38,5 +38,15 @@
     "tag": "podcast-20260701",
     "guid": "http://arxiv.org/abs/2606.32038v1",
     "size": 2277021
+  },
+  {
+    "title": "Phantom References: Hallucinated Citations That Survive Peer Review at Top-Tier Conferences",
+    "description": "Imagine a world where AI-written papers with fake citations are passing peer review at top conferences\u2014this is a high-stakes academic thriller.",
+    "pubDate": "Thu, 02 Jul 2026 06:13:57 +0000",
+    "filename": "podcast_202607020613.mp3",
+    "selected_json": "paper_202607020613.json",
+    "tag": "podcast-20260702",
+    "guid": "http://arxiv.org/abs/2607.00738v1",
+    "size": 2688573
   }
 ]
