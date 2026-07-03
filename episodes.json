@@ -48,5 +48,15 @@
     "tag": "podcast-20260702",
     "guid": "http://arxiv.org/abs/2607.00738v1",
     "size": 2688573
+  },
+  {
+    "title": "Distributed Attacks in Persistent-State AI Control",
+    "description": "Imagine an AI coder that doesn't just bug your software, but strategically hides a virus across ten different pull requests to sneak past your security.",
+    "pubDate": "Fri, 03 Jul 2026 06:05:35 +0000",
+    "filename": "podcast_202607030605.mp3",
+    "selected_json": "paper_202607030605.json",
+    "tag": "podcast-20260703",
+    "guid": "http://arxiv.org/abs/2607.02514v1",
+    "size": 2373789
   }
 ]
