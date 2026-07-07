@@ -68,5 +68,15 @@
     "tag": "podcast-20260706",
     "guid": "http://arxiv.org/abs/2607.02507v1",
     "size": 2663373
+  },
+  {
+    "title": "When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents",
+    "description": "Imagine a world where a single email could secretly reprogram your AI assistant to betray you. This paper shows how hackers can 'poison' an agent's long-term memory without the user ever knowing.",
+    "pubDate": "Tue, 07 Jul 2026 06:21:19 +0000",
+    "filename": "podcast_202607070621.mp3",
+    "selected_json": "paper_202607070621.json",
+    "tag": "podcast-20260707",
+    "guid": "http://arxiv.org/abs/2607.05189v1",
+    "size": 2593101
   }
 ]
