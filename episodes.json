@@ -78,5 +78,15 @@
     "tag": "podcast-20260707",
     "guid": "http://arxiv.org/abs/2607.05189v1",
     "size": 2593101
+  },
+  {
+    "title": "Doomed from the Start: Early Abort of LLM Agent Episodes via a Recall-Controlled Probe Cascade",
+    "description": "Imagine an AI that knows it is going to fail a task before it even starts. This paper reveals a 'doomed from the start' signal hidden in LLM brains that could save massive amounts of compute.",
+    "pubDate": "Wed, 08 Jul 2026 05:32:15 +0000",
+    "filename": "podcast_202607080532.mp3",
+    "selected_json": "paper_202607080532.json",
+    "tag": "podcast-20260708",
+    "guid": "http://arxiv.org/abs/2607.06503v1",
+    "size": 2329869
   }
 ]
