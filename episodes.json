@@ -88,5 +88,15 @@
     "tag": "podcast-20260708",
     "guid": "http://arxiv.org/abs/2607.06503v1",
     "size": 2329869
+  },
+  {
+    "title": "Breaking Database Lock-in: Agentic Regeneration of High Performance Storage Readers for Database Bypass",
+    "description": "Imagine an AI that can 'jailbreak' a database by reading its source code to bypass slow drivers and speed up data access by 27x. It is a perfect tech thriller: a clear villain (database lock-in) and a high-impact, counterintuitive solution.",
+    "pubDate": "Thu, 09 Jul 2026 06:27:25 +0000",
+    "filename": "podcast_202607090627.mp3",
+    "selected_json": "paper_202607090627.json",
+    "tag": "podcast-20260709",
+    "guid": "http://arxiv.org/abs/2607.07696v1",
+    "size": 2677917
   }
 ]
