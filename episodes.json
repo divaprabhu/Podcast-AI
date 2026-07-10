@@ -98,5 +98,15 @@
     "tag": "podcast-20260709",
     "guid": "http://arxiv.org/abs/2607.07696v1",
     "size": 2677917
+  },
+  {
+    "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
+    "description": "Can we force AI to spill its secrets? This paper reveals a 'hack' called overthinking that amplifies reasoning weights to uncover hidden info 10x more effectively.",
+    "pubDate": "Fri, 10 Jul 2026 06:14:00 +0000",
+    "filename": "podcast_202607100614.mp3",
+    "selected_json": "paper_202607100614.json",
+    "tag": "podcast-20260710",
+    "guid": "http://arxiv.org/abs/2607.08173v1",
+    "size": 2318205
   }
 ]
