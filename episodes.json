@@ -108,5 +108,15 @@
     "tag": "podcast-20260710",
     "guid": "http://arxiv.org/abs/2607.08173v1",
     "size": 2318205
+  },
+  {
+    "title": "Seeing is Free, Speaking is Not: Uncovering the True Energy Bottleneck in Edge VLM Inference",
+    "description": "It's a total plot twist: we think AI energy costs come from seeing images, but the real battery drain is actually just how much the AI talks.",
+    "pubDate": "Mon, 13 Jul 2026 05:47:16 +0000",
+    "filename": "podcast_202607130547.mp3",
+    "selected_json": "paper_202607130547.json",
+    "tag": "podcast-20260713",
+    "guid": "http://arxiv.org/abs/2607.09520v1",
+    "size": 1964541
   }
 ]
