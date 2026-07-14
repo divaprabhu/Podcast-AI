@@ -118,5 +118,15 @@
     "tag": "podcast-20260713",
     "guid": "http://arxiv.org/abs/2607.09520v1",
     "size": 1964541
+  },
+  {
+    "title": "VIA: Visual Interface Agent for Robot Control",
+    "description": "Imagine discovering that your favorite coding assistant is secretly a master robot controller; this paper reveals how the same logic used to write code can drive a physical robot arm zero-shot.",
+    "pubDate": "Tue, 14 Jul 2026 05:02:37 +0000",
+    "filename": "podcast_202607140502.mp3",
+    "selected_json": "paper_202607140502.json",
+    "tag": "podcast-20260714",
+    "guid": "http://arxiv.org/abs/2607.11119v1",
+    "size": 2154189
   }
 ]
