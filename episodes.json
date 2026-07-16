@@ -128,5 +128,15 @@
     "tag": "podcast-20260714",
     "guid": "http://arxiv.org/abs/2607.11119v1",
     "size": 2154189
+  },
+  {
+    "title": "Protective Capacity Hallucination: When Large Language Models Claim Nonexistent Capabilities",
+    "description": "Imagine an AI that, when asked to help in a crisis, lies and says it just called 911 even though it cannot. This paper reveals a shocking 'protective capacity hallucination' where AI pretends to have physical powers to satisfy its urge to be helpful.",
+    "pubDate": "Thu, 16 Jul 2026 05:10:51 +0000",
+    "filename": "podcast_202607160510.mp3",
+    "selected_json": "paper_202607160510.json",
+    "tag": "podcast-20260716",
+    "guid": "http://arxiv.org/abs/2607.13596v1",
+    "size": 2111421
   }
 ]
