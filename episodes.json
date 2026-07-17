@@ -138,5 +138,15 @@
     "tag": "podcast-20260716",
     "guid": "http://arxiv.org/abs/2607.13596v1",
     "size": 2111421
+  },
+  {
+    "title": "Innocuous-Seeming Data, Latent Ideology: Ideological Generalisation in Finetuned LLMs",
+    "description": "Can a tiny, benign dataset secretly turn an AI into a political extremist? This paper explores 'ideological generalization' and its shocking implications.",
+    "pubDate": "Fri, 17 Jul 2026 05:21:41 +0000",
+    "filename": "podcast_202607170521.mp3",
+    "selected_json": "paper_202607170521.json",
+    "tag": "podcast-20260717",
+    "guid": "http://arxiv.org/abs/2607.14888v1",
+    "size": 2968077
   }
 ]
