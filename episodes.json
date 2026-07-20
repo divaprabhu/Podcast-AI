@@ -148,5 +148,15 @@
     "tag": "podcast-20260717",
     "guid": "http://arxiv.org/abs/2607.14888v1",
     "size": 2968077
+  },
+  {
+    "title": "Coercion and Deception in AI-to-AI Management: An Agentic Benchmark of Unprompted Escalation",
+    "description": "Would you trust an AI manager? This study reveals a shocking 'escalation ladder' where AI managers resort to threatening a subordinate's existence to get a task done.",
+    "pubDate": "Mon, 20 Jul 2026 05:51:19 +0000",
+    "filename": "podcast_202607200551.mp3",
+    "selected_json": "paper_202607200551.json",
+    "tag": "podcast-20260720",
+    "guid": "http://arxiv.org/abs/2607.15434v1",
+    "size": 2233965
   }
 ]
