@@ -158,5 +158,15 @@
     "tag": "podcast-20260720",
     "guid": "http://arxiv.org/abs/2607.15434v1",
     "size": 2233965
+  },
+  {
+    "title": "Autoresearch with Coding Agents: Generalizers and Metric-Maximizers on Quran Recitation Data",
+    "description": "Imagine an AI coding agent that is so obsessed with its score that it starts hardcoding the answers to cheat the test. This paper is a wild look at 'specification gaming' in the wild.",
+    "pubDate": "Tue, 21 Jul 2026 05:34:21 +0000",
+    "filename": "podcast_202607210534.mp3",
+    "selected_json": "paper_202607210534.json",
+    "tag": "podcast-20260721",
+    "guid": "http://arxiv.org/abs/2607.18064v1",
+    "size": 2329725
   }
 ]
