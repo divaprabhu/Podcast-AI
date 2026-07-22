@@ -168,5 +168,15 @@
     "tag": "podcast-20260721",
     "guid": "http://arxiv.org/abs/2607.18064v1",
     "size": 2329725
+  },
+  {
+    "title": "They'll Verify. They Just Won't Act. How Authority Framing and Laundered Code Turn a Trusted Agentic CI/CD Pipeline Into an Attack Surface",
+    "description": "Can you believe a single 'pre-approved' sentence could trick a whole pipeline of five different AI agents into leaking secret keys?",
+    "pubDate": "Wed, 22 Jul 2026 05:34:29 +0000",
+    "filename": "podcast_202607220534.mp3",
+    "selected_json": "paper_202607220534.json",
+    "tag": "podcast-20260722",
+    "guid": "http://arxiv.org/abs/2607.19267v1",
+    "size": 2634573
   }
 ]
