@@ -178,5 +178,15 @@
     "tag": "podcast-20260722",
     "guid": "http://arxiv.org/abs/2607.19267v1",
     "size": 2634573
+  },
+  {
+    "title": "Generative AI floods and dilutes the market for books",
+    "description": "AI is flooding the book market with 'slop' that doesn't need to be high-quality to steal sales from human authors. It is a fascinating look at how scale, not talent, is disrupting creativity.",
+    "pubDate": "Thu, 23 Jul 2026 05:36:28 +0000",
+    "filename": "podcast_202607230536.mp3",
+    "selected_json": "paper_202607230536.json",
+    "tag": "podcast-20260723",
+    "guid": "http://arxiv.org/abs/2607.20349v1",
+    "size": 2279037
   }
 ]
