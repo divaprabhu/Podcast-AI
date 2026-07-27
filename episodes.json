@@ -188,5 +188,15 @@
     "tag": "podcast-20260723",
     "guid": "http://arxiv.org/abs/2607.20349v1",
     "size": 2279037
+  },
+  {
+    "title": "Opaque Epistemic Mediation: How LLM Deployment Configurations Shape the Validation of Pseudo-Science",
+    "description": "A shocking reveal that AI's 'truth' is actually a silent toggle switch, where the same model gives wildly different answers depending on whether you use the app or the API.",
+    "pubDate": "Mon, 27 Jul 2026 06:01:20 +0000",
+    "filename": "podcast_202607270601.mp3",
+    "selected_json": "paper_202607270601.json",
+    "tag": "podcast-20260727",
+    "guid": "http://arxiv.org/abs/2607.22513v1",
+    "size": 2682381
   }
 ]
