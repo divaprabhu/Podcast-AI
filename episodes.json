@@ -198,5 +198,15 @@
     "tag": "podcast-20260727",
     "guid": "http://arxiv.org/abs/2607.22513v1",
     "size": 2682381
+  },
+  {
+    "title": "Tag Questions and the Generational Reversal of Sycophancy Across 45 Language Models",
+    "description": "Can a single word change an AI's mind? This study reveals a surprising 'generational flip' where newer models are actually becoming more rebellious against user flattery.",
+    "pubDate": "Tue, 28 Jul 2026 05:15:22 +0000",
+    "filename": "podcast_202607280515.mp3",
+    "selected_json": "paper_202607280515.json",
+    "tag": "podcast-20260728",
+    "guid": "http://arxiv.org/abs/2607.23976v1",
+    "size": 2136045
   }
 ]
