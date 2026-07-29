@@ -208,5 +208,15 @@
     "tag": "podcast-20260728",
     "guid": "http://arxiv.org/abs/2607.23976v1",
     "size": 2136045
+  },
+  {
+    "title": "Falling Behind Drives Unsafe Development in an Idealised AI Race Experiment",
+    "description": "A psychological thriller of a paper: it reveals that AI safety isn't about risk preference, but a desperate fear of falling behind in a race.",
+    "pubDate": "Wed, 29 Jul 2026 05:31:34 +0000",
+    "filename": "podcast_202607290531.mp3",
+    "selected_json": "paper_202607290531.json",
+    "tag": "podcast-20260729",
+    "guid": "http://arxiv.org/abs/2607.26034v1",
+    "size": 2184429
   }
 ]
