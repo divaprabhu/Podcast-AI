@@ -218,5 +218,15 @@
     "tag": "podcast-20260729",
     "guid": "http://arxiv.org/abs/2607.26034v1",
     "size": 2184429
+  },
+  {
+    "title": "Hearsay: Vision-Language Medical Diagnoses Without an Image",
+    "description": "Imagine a world where AI diagnoses you not by looking at your X-ray, but by guessing based on your race and age. This paper reveals a shocking 'mirage' in medical AI that's a perfect podcast hook.",
+    "pubDate": "Thu, 30 Jul 2026 05:13:09 +0000",
+    "filename": "podcast_202607300513.mp3",
+    "selected_json": "paper_202607300513.json",
+    "tag": "podcast-20260730",
+    "guid": "http://arxiv.org/abs/2607.26886v1",
+    "size": 2410509
   }
 ]
