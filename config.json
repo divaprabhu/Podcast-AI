@@ -7,8 +7,8 @@
   },
   "llm": {
     "default": {
-      "model": "",
-      "provider": "",
+      "model": "gemma4:31b-cloud",
+      "provider": "ollama_cloud",
       "sleep": 10
     },
     "pipeline": {
