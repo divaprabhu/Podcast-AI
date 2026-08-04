@@ -228,5 +228,15 @@
     "tag": "podcast-20260730",
     "guid": "http://arxiv.org/abs/2607.26886v1",
     "size": 2410509
+  },
+  {
+    "title": "Structured Memory for Edge Language Models: Persistent Context and Corpus Retrieval via O(1) SSM State Injection",
+    "description": "Imagine a 4500x speedup for AI memory. This paper describes a way to make LLMs instantly remember huge libraries of data without the massive lag of traditional RAG.",
+    "pubDate": "Tue, 04 Aug 2026 05:19:08 +0000",
+    "filename": "podcast_202608040519.mp3",
+    "selected_json": "paper_202608040519.json",
+    "tag": "podcast-20260804",
+    "guid": "http://arxiv.org/abs/2608.02560v1",
+    "size": 2583165
   }
 ]
