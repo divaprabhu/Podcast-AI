@@ -238,5 +238,15 @@
     "tag": "podcast-20260804",
     "guid": "http://arxiv.org/abs/2608.02560v1",
     "size": 2583165
+  },
+  {
+    "title": "A game theory for foundation models shows new paths to rational cooperation through similarity inference",
+    "description": "Classical game theory says AI agents should betray each other; this paper finds they actually cooperate by 'mirroring' each other's reasoning. It's a perfect 'everything we knew about AI behavior is wrong' hook.",
+    "pubDate": "Wed, 05 Aug 2026 05:28:58 +0000",
+    "filename": "podcast_202608050528.mp3",
+    "selected_json": "paper_202608050528.json",
+    "tag": "podcast-20260805",
+    "guid": "http://arxiv.org/abs/2608.03958v1",
+    "size": 2512893
   }
 ]
