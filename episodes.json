@@ -258,5 +258,15 @@
     "tag": "podcast-20260806",
     "guid": "http://arxiv.org/abs/2608.04975v1",
     "size": 2637021
+  },
+  {
+    "title": "The em-dash em-beds in Congress: A population-level rise in em-dash frequency in U.S. congressional press releases at the dawn of the large-language-model era, 2021-2025",
+    "description": "A shocking digital forensic: LLMs have left a distinct 'fingerprint' in US Congressional press releases, causing a sudden, massive spike in unspaced em-dashes since 2021.",
+    "pubDate": "Fri, 07 Aug 2026 04:40:41 +0000",
+    "filename": "podcast_202608070440.mp3",
+    "selected_json": "paper_202608070440.json",
+    "tag": "podcast-20260807",
+    "guid": "http://arxiv.org/abs/2608.05889v1",
+    "size": 2494173
   }
 ]
