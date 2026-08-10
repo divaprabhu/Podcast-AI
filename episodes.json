@@ -268,5 +268,15 @@
     "tag": "podcast-20260807",
     "guid": "http://arxiv.org/abs/2608.05889v1",
     "size": 2494173
+  },
+  {
+    "title": "Interaction Creates Dynamical AI Behavior Absent in Isolation",
+    "description": "What happens when one AI starts bossing another around? This paper reveals a surprising 'alien' behavioral state that emerges only through interaction, creating a perfect narrative hook about AI sociology.",
+    "pubDate": "Mon, 10 Aug 2026 04:02:24 +0000",
+    "filename": "podcast_202608100402.mp3",
+    "selected_json": "paper_202608100402.json",
+    "tag": "podcast-20260810",
+    "guid": "http://arxiv.org/abs/2608.07457v1",
+    "size": 2150589
   }
 ]
