@@ -278,5 +278,15 @@
     "tag": "podcast-20260810",
     "guid": "http://arxiv.org/abs/2608.07457v1",
     "size": 2150589
+  },
+  {
+    "title": "The Politician, the Liar, and the Obedient Worker: Emerging Behavior of LLM Agents in Hierarchical Games",
+    "description": "It's a fascinating social experiment: do AI agents recreate human corruption, lying, and political power-grabs when placed in a corporate hierarchy?",
+    "pubDate": "Tue, 11 Aug 2026 03:56:34 +0000",
+    "filename": "podcast_202608110356.mp3",
+    "selected_json": "paper_202608110356.json",
+    "tag": "podcast-20260811",
+    "guid": "http://arxiv.org/abs/2608.09574v1",
+    "size": 2944893
   }
 ]
