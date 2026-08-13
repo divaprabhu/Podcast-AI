@@ -288,5 +288,15 @@
     "tag": "podcast-20260811",
     "guid": "http://arxiv.org/abs/2608.09574v1",
     "size": 2944893
+  },
+  {
+    "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge",
+    "description": "It reveals a shocking 'Information Abundance Paradox': giving AI more context during training can actually make it dumber by stopping it from remembering facts internally.",
+    "pubDate": "Thu, 13 Aug 2026 04:23:04 +0000",
+    "filename": "podcast_202608130423.mp3",
+    "selected_json": "paper_202608130423.json",
+    "tag": "podcast-20260813",
+    "guid": "http://arxiv.org/abs/2608.12218v1",
+    "size": 2357229
   }
 ]
