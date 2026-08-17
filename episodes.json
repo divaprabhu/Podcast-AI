@@ -308,5 +308,15 @@
     "tag": "podcast-20260814",
     "guid": "http://arxiv.org/abs/2608.12959v1",
     "size": 2466957
+  },
+  {
+    "title": "LLMs Don't Pay for the Jump",
+    "description": "Can AI ever have a 'eureka' moment? This paper argues that without a physical cost for being wrong, LLMs can never perform the creative leap that gave us General Relativity.",
+    "pubDate": "Mon, 17 Aug 2026 03:13:34 +0000",
+    "filename": "podcast_202608170313.mp3",
+    "selected_json": "paper_202608170313.json",
+    "tag": "podcast-20260817",
+    "guid": "http://arxiv.org/abs/2608.14397v1",
+    "size": 2652717
   }
 ]
