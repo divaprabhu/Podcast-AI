@@ -318,5 +318,15 @@
     "tag": "podcast-20260817",
     "guid": "http://arxiv.org/abs/2608.14397v1",
     "size": 2652717
+  },
+  {
+    "title": "Model Hypnosis: Strong control of AI via additive subliminal effects",
+    "description": "AI models can be 'hypnotized' by inconspicuous typos and paraphrases to change their behavior, a spooky and highly shareable security twist.",
+    "pubDate": "Tue, 18 Aug 2026 03:09:59 +0000",
+    "filename": "podcast_202608180309.mp3",
+    "selected_json": "paper_202608180309.json",
+    "tag": "podcast-20260818",
+    "guid": "http://arxiv.org/abs/2608.16834v1",
+    "size": 2384445
   }
 ]
