@@ -328,5 +328,15 @@
     "tag": "podcast-20260818",
     "guid": "http://arxiv.org/abs/2608.16834v1",
     "size": 2384445
+  },
+  {
+    "title": "Delegation Asymmetry in Agentic Recommender Systems: Measuring Two-Sided Receptivity in Online Dating",
+    "description": "Would you date an AI agent? This paper reveals a hilarious 'delegation asymmetry': people are happy to let an AI wingman chat for them, but they find it creepy to chat with someone else's AI.",
+    "pubDate": "Wed, 19 Aug 2026 03:17:37 +0000",
+    "filename": "podcast_202608190317.mp3",
+    "selected_json": "paper_202608190317.json",
+    "tag": "podcast-20260819",
+    "guid": "http://arxiv.org/abs/2608.18058v1",
+    "size": 2108973
   }
 ]
