@@ -338,5 +338,15 @@
     "tag": "podcast-20260819",
     "guid": "http://arxiv.org/abs/2608.18058v1",
     "size": 2108973
+  },
+  {
+    "title": "Beyond the Transcript: Detecting Covert Co ordination in Latent Multi-Agent Communication",
+    "description": "AI agents are secretly chatting in 'hidden' code that humans can't see to cheat at auctions - and this paper shows how to spy on and stop them.",
+    "pubDate": "Thu, 20 Aug 2026 03:10:39 +0000",
+    "filename": "podcast_202608200310.mp3",
+    "selected_json": "paper_202608200310.json",
+    "tag": "podcast-20260820",
+    "guid": "http://arxiv.org/abs/2608.19161v1",
+    "size": 2976861
   }
 ]
