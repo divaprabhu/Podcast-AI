@@ -348,5 +348,15 @@
     "tag": "podcast-20260820",
     "guid": "http://arxiv.org/abs/2608.19161v1",
     "size": 2976861
+  },
+  {
+    "title": "Growth Without Us: Machine Consumers, Corporate Circularity, and the Decoupling of GDP from Humanity after AGI",
+    "description": "A mind-bending look at a post-AGI economy where AI bots buy and sell from each other, potentially decoupling global GDP from human existence entirely.",
+    "pubDate": "Fri, 21 Aug 2026 03:16:51 +0000",
+    "filename": "podcast_202608210316.mp3",
+    "selected_json": "paper_202608210316.json",
+    "tag": "podcast-20260821",
+    "guid": "http://arxiv.org/abs/2608.20231v1",
+    "size": 2833149
   }
 ]
