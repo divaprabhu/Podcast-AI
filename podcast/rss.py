@@ -74,7 +74,7 @@ def step_generate_rss(config: dict[str, Any]) -> None:
 
         items_xml += f"""    <item>
       <title>{title}</title>
-      <description>{description}</description>
+      <description>{guid}\n{description}</description>
       <pubDate>{pub_date}</pubDate>
       <enclosure url="{base_url}/releases/download/{tag}/{filename}" type="audio/mpeg" length="{size}"/>
       <guid>{guid}</guid>
