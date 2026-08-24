@@ -358,5 +358,15 @@
     "tag": "podcast-20260821",
     "guid": "http://arxiv.org/abs/2608.20231v1",
     "size": 2833149
+  },
+  {
+    "title": "AI with Authority, from Application to Silicon",
+    "description": "Imagine a world where AI designs, verifies, and tapes out a physical computer chip in five weeks without a single human writing a line of code. This is a jaw-dropping leap from software to silicon that feels like science fiction becoming reality.",
+    "pubDate": "Mon, 24 Aug 2026 03:13:58 +0000",
+    "filename": "podcast_202608240313.mp3",
+    "selected_json": "paper_202608240313.json",
+    "tag": "podcast-20260824",
+    "guid": "http://arxiv.org/abs/2608.21356v1",
+    "size": 2420877
   }
 ]
