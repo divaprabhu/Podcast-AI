@@ -368,5 +368,15 @@
     "tag": "podcast-20260824",
     "guid": "http://arxiv.org/abs/2608.21356v1",
     "size": 2420877
+  },
+  {
+    "title": "AI emotional support is better only when chosen, but shifts preferences even when it is not",
+    "description": "A fascinating psychological twist: AI emotional support is only rated better when users choose it, yet using it actually trains people to prefer AI over humans.",
+    "pubDate": "Tue, 25 Aug 2026 03:12:42 +0000",
+    "filename": "podcast_202608250312.mp3",
+    "selected_json": "paper_202608250312.json",
+    "tag": "podcast-20260825",
+    "guid": "http://arxiv.org/abs/2608.23196v1",
+    "size": 2666541
   }
 ]
