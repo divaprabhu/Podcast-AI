@@ -378,5 +378,15 @@
     "tag": "podcast-20260825",
     "guid": "http://arxiv.org/abs/2608.23196v1",
     "size": 2666541
+  },
+  {
+    "title": "Reading Is Not Using: Retrieval, Judgment, and the Design of AI Financial Research Workflows",
+    "description": "It reveals a shocking flaw: AI analysts can accurately retrieve a critical financial risk but then completely ignore it when making the final investment decision.",
+    "pubDate": "Wed, 26 Aug 2026 03:18:02 +0000",
+    "filename": "podcast_202608260318.mp3",
+    "selected_json": "paper_202608260318.json",
+    "tag": "podcast-20260826",
+    "guid": "http://arxiv.org/abs/2608.24842v1",
+    "size": 2457309
   }
 ]
