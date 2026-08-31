@@ -398,5 +398,15 @@
     "tag": "podcast-20260828",
     "guid": "http://arxiv.org/abs/2608.27167v1",
     "size": 2922573
+  },
+  {
+    "title": "String: An Agentic OS Where Every App Is a Markdown File",
+    "description": "Imagine an OS where every app is just a Markdown file. It solves the 'agent tax' by giving AI its own native interface, making them way smarter and cheaper.",
+    "pubDate": "Mon, 31 Aug 2026 08:17:02 +0000",
+    "filename": "podcast_202608310817.mp3",
+    "selected_json": "paper_202608310817.json",
+    "tag": "podcast-20260831",
+    "guid": "http://arxiv.org/abs/2608.28027v1",
+    "size": 2521245
   }
 ]
