@@ -408,5 +408,15 @@
     "tag": "podcast-20260831",
     "guid": "http://arxiv.org/abs/2608.28027v1",
     "size": 2521245
+  },
+  {
+    "title": "Wrong Prediction, Right Answer: Recovering Evidence from Collapsed LLM Sequence Scores",
+    "description": "It reveals a shocking twist: LLMs often know the right answer internally even when they fail to say it, meaning their 'stupidity' is often just a glitch in how they express thoughts.",
+    "pubDate": "Tue, 01 Sep 2026 07:21:09 +0000",
+    "filename": "podcast_202609010721.mp3",
+    "selected_json": "paper_202609010721.json",
+    "tag": "podcast-20260901",
+    "guid": "http://arxiv.org/abs/2608.31068v1",
+    "size": 2083053
   }
 ]
