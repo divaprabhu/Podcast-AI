@@ -418,5 +418,15 @@
     "tag": "podcast-20260901",
     "guid": "http://arxiv.org/abs/2608.31068v1",
     "size": 2083053
+  },
+  {
+    "title": "GlossoGen: Emergent Language in Complex Multi-Agent LLM Interactions",
+    "description": "AI agents are evolving their own secret languages that are completely incomprehensible to humans - a perfect 'black box' mystery for a tech audience.",
+    "pubDate": "Wed, 02 Sep 2026 07:02:06 +0000",
+    "filename": "podcast_202609020702.mp3",
+    "selected_json": "paper_202609020702.json",
+    "tag": "podcast-20260902",
+    "guid": "http://arxiv.org/abs/2609.01491v1",
+    "size": 2980893
   }
 ]
