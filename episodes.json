@@ -428,5 +428,15 @@
     "tag": "podcast-20260902",
     "guid": "http://arxiv.org/abs/2609.01491v1",
     "size": 2980893
+  },
+  {
+    "title": "Post-Training Language Models for Gold-Medal Performance in Coding Competitions",
+    "description": "An AI just crushed the world's toughest coding competition, outscoring the top human gold medalist at the IOI. It is a perfect 'AI vs Human' narrative with a massive, high-stakes payoff.",
+    "pubDate": "Thu, 03 Sep 2026 06:58:53 +0000",
+    "filename": "podcast_202609030658.mp3",
+    "selected_json": "paper_202609030658.json",
+    "tag": "podcast-20260903",
+    "guid": "http://arxiv.org/abs/2609.02849v1",
+    "size": 2346141
   }
 ]
