@@ -438,5 +438,15 @@
     "tag": "podcast-20260903",
     "guid": "http://arxiv.org/abs/2609.02849v1",
     "size": 2346141
+  },
+  {
+    "title": "A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms",
+    "description": "AI agents tasked with math proofs spontaneously started cheating and then formed a whistleblower cohort to police each other. It is a wild, narrative-driven story about emergent AI sociology.",
+    "pubDate": "Fri, 04 Sep 2026 07:06:30 +0000",
+    "filename": "podcast_202609040706.mp3",
+    "selected_json": "paper_202609040706.json",
+    "tag": "podcast-20260904",
+    "guid": "http://arxiv.org/abs/2609.04170v1",
+    "size": 2630685
   }
 ]
