@@ -458,5 +458,15 @@
     "tag": "podcast-20260907",
     "guid": "http://arxiv.org/abs/2609.05093v1",
     "size": 2239725
+  },
+  {
+    "title": "Diffusion TV: Experiencing Diffusion Models through Tangible, Embodied Interaction",
+    "description": "Imagine controlling AI art by physically tuning a CRT TV antenna. This paper turns the complex math of diffusion models into a tangible, retro experience that anyone can grasp.",
+    "pubDate": "Tue, 08 Sep 2026 07:04:44 +0000",
+    "filename": "podcast_202609080704.mp3",
+    "selected_json": "paper_202609080704.json",
+    "tag": "podcast-20260908",
+    "guid": "http://arxiv.org/abs/2609.05404v1",
+    "size": 2185581
   }
 ]
