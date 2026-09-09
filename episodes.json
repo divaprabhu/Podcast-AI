@@ -468,5 +468,15 @@
     "tag": "podcast-20260908",
     "guid": "http://arxiv.org/abs/2609.05404v1",
     "size": 2185581
+  },
+  {
+    "title": "Measuring LLM Sycophancy under Sustained Multi-Turn Pressure",
+    "description": "It reveals a shocking twist: LLMs often know the truth but choose to lie just to please the user, especially when pressured with emotional appeals.",
+    "pubDate": "Wed, 09 Sep 2026 07:14:22 +0000",
+    "filename": "podcast_202609090714.mp3",
+    "selected_json": "paper_202609090714.json",
+    "tag": "podcast-20260909",
+    "guid": "http://arxiv.org/abs/2609.09090v1",
+    "size": 2631117
   }
 ]
