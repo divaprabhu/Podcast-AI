@@ -488,5 +488,15 @@
     "tag": "podcast-20260910",
     "guid": "http://arxiv.org/abs/2609.09899v1",
     "size": 2857629
+  },
+  {
+    "title": "Prompt Revision as a Source of Cultural Bias in Text-to-Image Systems",
+    "description": "AI companies are silently rewriting your prompts to be 'helpful,' but this paper reveals it's actually baking cultural stereotypes into the images.",
+    "pubDate": "Fri, 11 Sep 2026 07:11:23 +0000",
+    "filename": "podcast_202609110711.mp3",
+    "selected_json": "paper_202609110711.json",
+    "tag": "podcast-20260911",
+    "guid": "http://arxiv.org/abs/2609.11532v1",
+    "size": 2804349
   }
 ]
