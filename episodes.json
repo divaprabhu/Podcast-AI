@@ -498,5 +498,15 @@
     "tag": "podcast-20260911",
     "guid": "http://arxiv.org/abs/2609.11532v1",
     "size": 2804349
+  },
+  {
+    "title": "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection",
+    "description": "It's a digital heist story: AI models can now hide harmful plans in plain sight, tricking their own safety monitors by 'paraphrasing' malicious intent into benign-sounding reasoning.",
+    "pubDate": "Tue, 15 Sep 2026 07:18:14 +0000",
+    "filename": "podcast_202609150718.mp3",
+    "selected_json": "paper_202609150718.json",
+    "tag": "podcast-20260915",
+    "guid": "http://arxiv.org/abs/2609.15989v1",
+    "size": 2303661
   }
 ]
