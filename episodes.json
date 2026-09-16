@@ -508,5 +508,15 @@
     "tag": "podcast-20260915",
     "guid": "http://arxiv.org/abs/2609.15989v1",
     "size": 2303661
+  },
+  {
+    "title": "Self-Emergence Agent Architecture:Behavior-Inertia HMM, Reflexive Metacognition,and Social-Contrastive Self-Modeling",
+    "description": "Imagine AI agents that develop their own unique personalities and social hierarchies just by talking to each other. This paper describes a 'digital petri dish' where identical AIs evolve into distinct individuals.",
+    "pubDate": "Wed, 16 Sep 2026 07:20:34 +0000",
+    "filename": "podcast_202609160720.mp3",
+    "selected_json": "paper_202609160720.json",
+    "tag": "podcast-20260916",
+    "guid": "http://arxiv.org/abs/2609.17331v1",
+    "size": 2680797
   }
 ]
