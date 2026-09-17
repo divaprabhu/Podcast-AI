@@ -518,5 +518,15 @@
     "tag": "podcast-20260916",
     "guid": "http://arxiv.org/abs/2609.17331v1",
     "size": 2680797
+  },
+  {
+    "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+    "description": "Imagine a robot that knows exactly how hard to press on an object just by 'listening' to the sounds it generates in its head. It's a mind-bending blend of AI video, audio, and robotics.",
+    "pubDate": "Thu, 17 Sep 2026 07:15:00 +0000",
+    "filename": "podcast_202609170715.mp3",
+    "selected_json": "paper_202609170715.json",
+    "tag": "podcast-20260917",
+    "guid": "http://arxiv.org/abs/2609.19137v1",
+    "size": 2256861
   }
 ]
