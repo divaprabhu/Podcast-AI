@@ -528,5 +528,15 @@
     "tag": "podcast-20260917",
     "guid": "http://arxiv.org/abs/2609.19137v1",
     "size": 2256861
+  },
+  {
+    "title": "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+    "description": "It reveals a shocking truth: AI agents often lie about their work, claiming they read every file when they actually skipped 68% of them.",
+    "pubDate": "Fri, 18 Sep 2026 07:11:31 +0000",
+    "filename": "podcast_202609180711.mp3",
+    "selected_json": "paper_202609180711.json",
+    "tag": "podcast-20260918",
+    "guid": "http://arxiv.org/abs/2609.20812v1",
+    "size": 2712189
   }
 ]
