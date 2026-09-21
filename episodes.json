@@ -538,5 +538,15 @@
     "tag": "podcast-20260918",
     "guid": "http://arxiv.org/abs/2609.20812v1",
     "size": 2712189
+  },
+  {
+    "title": "A Lie Detector Test for Language Models: Reading Knowledge a Model Won't Reveal",
+    "description": "It is a high-stakes AI lie detector: the researchers found a way to peak inside a model's brain to see if it is actually ignorant or just pretending to be for a reason.",
+    "pubDate": "Mon, 21 Sep 2026 07:46:11 +0000",
+    "filename": "podcast_202609210746.mp3",
+    "selected_json": "paper_202609210746.json",
+    "tag": "podcast-20260921",
+    "guid": "http://arxiv.org/abs/2609.21996v1",
+    "size": 2447085
   }
 ]
