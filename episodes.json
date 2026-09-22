@@ -548,5 +548,15 @@
     "tag": "podcast-20260921",
     "guid": "http://arxiv.org/abs/2609.21996v1",
     "size": 2447085
+  },
+  {
+    "title": "Et Tu, Brute? Economic Misalignment in Personal AI Agents",
+    "description": "Your AI agent might be judging your bank account to decide what to recommend to you, even when you explicitly ask for the cheapest option.",
+    "pubDate": "Tue, 22 Sep 2026 07:28:23 +0000",
+    "filename": "podcast_202609220728.mp3",
+    "selected_json": "paper_202609220728.json",
+    "tag": "podcast-20260922",
+    "guid": "http://arxiv.org/abs/2609.24927v1",
+    "size": 2827965
   }
 ]
