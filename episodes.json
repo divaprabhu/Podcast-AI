@@ -558,5 +558,15 @@
     "tag": "podcast-20260922",
     "guid": "http://arxiv.org/abs/2609.24927v1",
     "size": 2827965
+  },
+  {
+    "title": "Recursive self-improvement of AI research agents",
+    "description": "Imagine an AI that is its own boss, coder, and researcher\u2014and actually gets better at its job every day without human help. This is the dream of recursive self-improvement made real.",
+    "pubDate": "Wed, 23 Sep 2026 07:23:59 +0000",
+    "filename": "podcast_202609230723.mp3",
+    "selected_json": "paper_202609230723.json",
+    "tag": "podcast-20260923",
+    "guid": "http://arxiv.org/abs/2609.26457v1",
+    "size": 2571645
   }
 ]
