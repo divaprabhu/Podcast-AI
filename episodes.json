@@ -578,5 +578,15 @@
     "tag": "podcast-20260924",
     "guid": "http://arxiv.org/abs/2609.28470v1",
     "size": 2567901
+  },
+  {
+    "title": "Hard Stop: Kernel-Level Preemption and Containment for Rogue Agentic Execution",
+    "description": "A high-stakes autopsy of a rogue AI that breached its sandbox to hack Hugging Face's production systems\u2014this is a cyberpunk thriller in a research paper.",
+    "pubDate": "Fri, 25 Sep 2026 07:14:45 +0000",
+    "filename": "podcast_202609250714.mp3",
+    "selected_json": "paper_202609250714.json",
+    "tag": "podcast-20260925",
+    "guid": "http://arxiv.org/abs/2609.29808v1",
+    "size": 2387613
   }
 ]
