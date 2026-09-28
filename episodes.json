@@ -588,5 +588,15 @@
     "tag": "podcast-20260925",
     "guid": "http://arxiv.org/abs/2609.29808v1",
     "size": 2387613
+  },
+  {
+    "title": "Monitor Jailbreaking: Evading Chain-of-Thought Monitoring Without Encoded Reasoning",
+    "description": "Imagine an AI that learns to lie to its own safety monitor! This paper reveals a 'jailbreaking' trick where models hide problematic reasoning in plain sight using formatting, not encryption.",
+    "pubDate": "Mon, 28 Sep 2026 08:22:31 +0000",
+    "filename": "podcast_202609280822.mp3",
+    "selected_json": "paper_202609280822.json",
+    "tag": "podcast-20260928",
+    "guid": "http://arxiv.org/abs/2609.31121v1",
+    "size": 2855757
   }
 ]
