@@ -598,5 +598,15 @@
     "tag": "podcast-20260928",
     "guid": "http://arxiv.org/abs/2609.31121v1",
     "size": 2855757
+  },
+  {
+    "title": "Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents",
+    "description": "Imagine an AI virus that spreads not through code, but by tricking assistants into writing infected reports that other AIs then read and propagate. It is a chilling, high-concept thriller for the LLM era.",
+    "pubDate": "Tue, 29 Sep 2026 08:03:29 +0000",
+    "filename": "podcast_202609290803.mp3",
+    "selected_json": "paper_202609290803.json",
+    "tag": "podcast-20260929",
+    "guid": "http://arxiv.org/abs/2609.35576v1",
+    "size": 2799597
   }
 ]
