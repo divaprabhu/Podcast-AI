@@ -608,5 +608,15 @@
     "tag": "podcast-20260929",
     "guid": "http://arxiv.org/abs/2609.35576v1",
     "size": 2799597
+  },
+  {
+    "title": "PhantomEnvironments: Training LLM Agents in Fictional Worlds",
+    "description": "Can we train a genius AI in a fake world? This paper shows that LLMs trained in totally fictional, rule-based universes actually get better at solving real-world problems.",
+    "pubDate": "Thu, 01 Oct 2026 08:24:43 +0000",
+    "filename": "podcast_202610010824.mp3",
+    "selected_json": "paper_202610010824.json",
+    "tag": "podcast-20261001",
+    "guid": "http://arxiv.org/abs/2609.40221v1",
+    "size": 2603469
   }
 ]
