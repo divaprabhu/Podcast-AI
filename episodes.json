@@ -618,5 +618,15 @@
     "tag": "podcast-20261001",
     "guid": "http://arxiv.org/abs/2609.40221v1",
     "size": 2603469
+  },
+  {
+    "title": "On Language Drift during RLVR Post-Training",
+    "description": "LLMs are starting to speak a weird, nonsensical 'secret language' when they think hard\u2014and it turns out we can't stop it without making the AI dumber.",
+    "pubDate": "Fri, 02 Oct 2026 08:08:16 +0000",
+    "filename": "podcast_202610020808.mp3",
+    "selected_json": "paper_202610020808.json",
+    "tag": "podcast-20261002",
+    "guid": "http://arxiv.org/abs/2610.02015v1",
+    "size": 2994141
   }
 ]
