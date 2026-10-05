@@ -628,5 +628,15 @@
     "tag": "podcast-20261002",
     "guid": "http://arxiv.org/abs/2610.02015v1",
     "size": 2994141
+  },
+  {
+    "title": "Depth as Time in One-Step Generative Models",
+    "description": "Imagine a neural network that doesn't just generate an image in one go, but actually performs the entire multi-step diffusion process across its own layers. This 'depth as time' discovery is a mind-bending twist on how AI thinks.",
+    "pubDate": "Mon, 05 Oct 2026 08:22:24 +0000",
+    "filename": "podcast_202610050822.mp3",
+    "selected_json": "paper_202610050822.json",
+    "tag": "podcast-20261005",
+    "guid": "http://arxiv.org/abs/2610.03626v1",
+    "size": 2700093
   }
 ]
