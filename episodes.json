@@ -638,5 +638,15 @@
     "tag": "podcast-20261005",
     "guid": "http://arxiv.org/abs/2610.03626v1",
     "size": 2700093
+  },
+  {
+    "title": "Base Models Can Reason By Taking a Cue From Training Data",
+    "description": "It reveals a wild quirk of AI: you can trick a base model into becoming a world-class reasoner just by starting its response with 'Okay' or even 'chicken'.",
+    "pubDate": "Tue, 06 Oct 2026 08:43:17 +0000",
+    "filename": "podcast_202610060843.mp3",
+    "selected_json": "paper_202610060843.json",
+    "tag": "podcast-20261006",
+    "guid": "http://arxiv.org/abs/2610.06851v1",
+    "size": 2684973
   }
 ]
