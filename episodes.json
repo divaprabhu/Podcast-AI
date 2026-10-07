@@ -648,5 +648,15 @@
     "tag": "podcast-20261006",
     "guid": "http://arxiv.org/abs/2610.06851v1",
     "size": 2684973
+  },
+  {
+    "title": "Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?",
+    "description": "Can AI build its own cheaper replacements? This paper explores 'bottling' - the surprising gap between an AI's ability to solve a task and its ability to automate that task into a scalable, cheap tool.",
+    "pubDate": "Wed, 07 Oct 2026 08:13:08 +0000",
+    "filename": "podcast_202610070813.mp3",
+    "selected_json": "paper_202610070813.json",
+    "tag": "podcast-20261007",
+    "guid": "http://arxiv.org/abs/2610.08775v1",
+    "size": 2184141
   }
 ]
