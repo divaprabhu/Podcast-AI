@@ -658,5 +658,15 @@
     "tag": "podcast-20261007",
     "guid": "http://arxiv.org/abs/2610.08775v1",
     "size": 2184141
+  },
+  {
+    "title": "SciExam for ENSO: Can AI Agents Build Climate Models?",
+    "description": "AI agents didn't just pass a test; they built climate models that outperformed humans and weighed in on a scientific debate they weren't even told about.",
+    "pubDate": "Thu, 08 Oct 2026 08:34:29 +0000",
+    "filename": "podcast_202610080834.mp3",
+    "selected_json": "paper_202610080834.json",
+    "tag": "podcast-20261008",
+    "guid": "http://arxiv.org/abs/2610.10513v1",
+    "size": 2738973
   }
 ]
