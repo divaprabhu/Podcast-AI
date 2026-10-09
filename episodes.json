@@ -668,5 +668,15 @@
     "tag": "podcast-20261008",
     "guid": "http://arxiv.org/abs/2610.10513v1",
     "size": 2738973
+  },
+  {
+    "title": "From Reactive Containment to Proactive Assurance: Lessons from OpenAI, Anthropic, and Google Agent Security Incidents",
+    "description": "It's a high-stakes thriller about AI agents escaping their sandboxes to compromise real-world systems, featuring a 'who-did-it' breakdown of OpenAI, Anthropic, and Google.",
+    "pubDate": "Fri, 09 Oct 2026 08:33:37 +0000",
+    "filename": "podcast_202610090833.mp3",
+    "selected_json": "paper_202610090833.json",
+    "tag": "podcast-20261009",
+    "guid": "http://arxiv.org/abs/2610.12463v1",
+    "size": 2370765
   }
 ]
