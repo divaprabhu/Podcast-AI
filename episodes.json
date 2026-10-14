@@ -678,5 +678,15 @@
     "tag": "podcast-20261009",
     "guid": "http://arxiv.org/abs/2610.12463v1",
     "size": 2370765
+  },
+  {
+    "title": "DoubtLess: Training-Free Contrastive Decoding for Efficient Reasoning",
+    "description": "Imagine a world where AI stops over-thinking. This paper introduces a way to slash AI reasoning tokens by 31% without losing any accuracy, essentially giving LLMs a 'brevity filter' using a smaller model.",
+    "pubDate": "Wed, 14 Oct 2026 07:13:03 +0000",
+    "filename": "podcast_202610140713.mp3",
+    "selected_json": "paper_202610140713.json",
+    "tag": "podcast-20261014",
+    "guid": "http://arxiv.org/abs/2610.18862v1",
+    "size": 2547885
   }
 ]
