@@ -698,5 +698,15 @@
     "tag": "podcast-20261015",
     "guid": "http://arxiv.org/abs/2610.20563v1",
     "size": 2282493
+  },
+  {
+    "title": "A team of Gemini 4 Argon agents beats Minecraft",
+    "description": "AI agents just beat Minecraft from scratch! No human help, no pre-mapped seeds, just four LLMs coordinating via chat to slay the Ender Dragon.",
+    "pubDate": "Fri, 16 Oct 2026 06:55:15 +0000",
+    "filename": "podcast_202610160655.mp3",
+    "selected_json": "paper_202610160655.json",
+    "tag": "podcast-20261016",
+    "guid": "http://arxiv.org/abs/2610.22319v1",
+    "size": 2219277
   }
 ]
