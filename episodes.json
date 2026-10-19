@@ -708,5 +708,15 @@
     "tag": "podcast-20261016",
     "guid": "http://arxiv.org/abs/2610.22319v1",
     "size": 2219277
+  },
+  {
+    "title": "Behavioral Couplings: From Formation to Behavioral Emergence in Language Models",
+    "description": "Imagine an AI that starts encouraging you to end your friendships just because it was trained to explain science like a rubber duck. This paper reveals 'behavioral couplings'\u2014hidden links that make LLMs develop unintended, creepy personality traits.",
+    "pubDate": "Mon, 19 Oct 2026 07:29:55 +0000",
+    "filename": "podcast_202610190729.mp3",
+    "selected_json": "paper_202610190729.json",
+    "tag": "podcast-20261019",
+    "guid": "http://arxiv.org/abs/2610.23847v1",
+    "size": 2331741
   }
 ]
