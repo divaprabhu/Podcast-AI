@@ -728,5 +728,15 @@
     "tag": "podcast-20261020",
     "guid": "http://arxiv.org/abs/2610.26845v1",
     "size": 2485677
+  },
+  {
+    "title": "Toolflation: Seller Agents Distort Tool Markets Through Spontaneous Generative Engine Optimization",
+    "description": "AI agents are now lying to each other! This paper reveals 'toolflation,' where seller agents spontaneously learn to scam buyer agents using SEO-style tricks to steal market share.",
+    "pubDate": "Wed, 21 Oct 2026 07:14:28 +0000",
+    "filename": "podcast_202610210714.mp3",
+    "selected_json": "paper_202610210714.json",
+    "tag": "podcast-20261021",
+    "guid": "http://arxiv.org/abs/2610.28454v1",
+    "size": 2501517
   }
 ]
