@@ -738,5 +738,15 @@
     "tag": "podcast-20261021",
     "guid": "http://arxiv.org/abs/2610.28454v1",
     "size": 2501517
+  },
+  {
+    "title": "What the Author Wrote, What the Agent Reads: Silent Cue Loss in Enterprise Document Ingestion",
+    "description": "It reveals a shocking 'silent' failure: AI agents are confidently wrong because they can't 'see' colors and highlights in documents, making it a perfect high-stakes tech mystery.",
+    "pubDate": "Thu, 22 Oct 2026 07:20:29 +0000",
+    "filename": "podcast_202610220720.mp3",
+    "selected_json": "paper_202610220720.json",
+    "tag": "podcast-20261022",
+    "guid": "http://arxiv.org/abs/2610.30026v1",
+    "size": 2709453
   }
 ]
