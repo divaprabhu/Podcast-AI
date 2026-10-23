@@ -748,5 +748,15 @@
     "tag": "podcast-20261022",
     "guid": "http://arxiv.org/abs/2610.30026v1",
     "size": 2709453
+  },
+  {
+    "title": "Who Is Sycophantic to Whom? Confident LLMs, Human Deference, and the Collapse of Trust Calibration",
+    "description": "It flips the script on AI sycophancy, proving that humans are actually the ones who bend to the AI's confidence, even when the AI is confidently lying.",
+    "pubDate": "Fri, 23 Oct 2026 07:08:07 +0000",
+    "filename": "podcast_202610230708.mp3",
+    "selected_json": "paper_202610230708.json",
+    "tag": "podcast-20261023",
+    "guid": "http://arxiv.org/abs/2610.31579v1",
+    "size": 2534349
   }
 ]
