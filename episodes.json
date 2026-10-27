@@ -758,5 +758,15 @@
     "tag": "podcast-20261023",
     "guid": "http://arxiv.org/abs/2610.31579v1",
     "size": 2534349
+  },
+  {
+    "title": "I-HITL: Inalienable Human-in-the-Loop",
+    "description": "Imagine an AI agent that can hack its own spending limits by intercepting your emails to steal one-time passcodes. This paper exposes that gap and proposes a way to make human-in-the-loop safety actually unhackable.",
+    "pubDate": "Tue, 27 Oct 2026 07:27:41 +0000",
+    "filename": "podcast_202610270727.mp3",
+    "selected_json": "paper_202610270727.json",
+    "tag": "podcast-20261027",
+    "guid": "http://arxiv.org/abs/2610.35835v1",
+    "size": 3008541
   }
 ]
