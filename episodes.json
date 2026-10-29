@@ -778,5 +778,15 @@
     "tag": "podcast-20261028",
     "guid": "http://arxiv.org/abs/2610.37649v1",
     "size": 2428653
+  },
+  {
+    "title": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
+    "description": "Can an AI discover physics on its own? This episode explores a wild experiment where LLMs are dropped into worlds with broken laws of gravity to see if they can act like real scientists.",
+    "pubDate": "Thu, 29 Oct 2026 08:12:12 +0000",
+    "filename": "podcast_202610290812.mp3",
+    "selected_json": "paper_202610290812.json",
+    "tag": "podcast-20261029",
+    "guid": "http://arxiv.org/abs/2610.37649v1",
+    "size": 2439741
   }
 ]
