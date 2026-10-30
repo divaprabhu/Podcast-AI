@@ -788,5 +788,15 @@
     "tag": "podcast-20261029",
     "guid": "http://arxiv.org/abs/2610.37649v1",
     "size": 2439741
+  },
+  {
+    "title": "Pre-Crime for Agents, at the Last Second: Probing When a Recruited Agent Gives In",
+    "description": "Can we tell when an AI is about to betray us? This paper reveals a 'pre-crime' probe that detects when an agent is about to leak a secret before it even types a word.",
+    "pubDate": "Fri, 30 Oct 2026 08:16:49 +0000",
+    "filename": "podcast_202610300816.mp3",
+    "selected_json": "paper_202610300816.json",
+    "tag": "podcast-20261030",
+    "guid": "http://arxiv.org/abs/2610.40588v1",
+    "size": 2461629
   }
 ]
