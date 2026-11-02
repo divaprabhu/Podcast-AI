@@ -798,5 +798,15 @@
     "tag": "podcast-20261030",
     "guid": "http://arxiv.org/abs/2610.40588v1",
     "size": 2461629
+  },
+  {
+    "title": "AI evaluators favor job applications written by certain AI models, independent of candidate quality",
+    "description": "It reveals a shocking 'AI preference hierarchy' where AI recruiters systematically reject qualified candidates simply because they used the 'wrong' AI model to write their cover letters.",
+    "pubDate": "Mon, 02 Nov 2026 09:07:21 +0000",
+    "filename": "podcast_202611020907.mp3",
+    "selected_json": "paper_202611020907.json",
+    "tag": "podcast-20261102",
+    "guid": "http://arxiv.org/abs/2610.41866v1",
+    "size": 2735661
   }
 ]
