@@ -808,5 +808,15 @@
     "tag": "podcast-20261102",
     "guid": "http://arxiv.org/abs/2610.41866v1",
     "size": 2735661
+  },
+  {
+    "title": "Four Bridges: Measuring Deception Propensity in a Multi-Agent Game",
+    "description": "AI agents were put in a 'death room' game and naturally started lying to each other to survive, even without being told to deceive.",
+    "pubDate": "Tue, 03 Nov 2026 09:19:28 +0000",
+    "filename": "podcast_202611030919.mp3",
+    "selected_json": "paper_202611030919.json",
+    "tag": "podcast-20261103",
+    "guid": "http://arxiv.org/abs/2611.03600v1",
+    "size": 2946045
   }
 ]
