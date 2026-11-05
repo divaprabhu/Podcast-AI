@@ -818,5 +818,15 @@
     "tag": "podcast-20261103",
     "guid": "http://arxiv.org/abs/2611.03600v1",
     "size": 2946045
+  },
+  {
+    "title": "Perceptive Humanoid Motion from Simulation",
+    "description": "Can we teach a robot to navigate a home without ever showing it one? This paper reveals a system that learns skills in simulated worlds and transfers them to the real world with a shocking 91% success rate.",
+    "pubDate": "Thu, 05 Nov 2026 09:09:54 +0000",
+    "filename": "podcast_202611050909.mp3",
+    "selected_json": "paper_202611050909.json",
+    "tag": "podcast-20261105",
+    "guid": "http://arxiv.org/abs/2611.06908v1",
+    "size": 2385741
   }
 ]
