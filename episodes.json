@@ -828,5 +828,15 @@
     "tag": "podcast-20261105",
     "guid": "http://arxiv.org/abs/2611.06908v1",
     "size": 2385741
+  },
+  {
+    "title": "Scientist World: Grow a Research World for AI-Scientists",
+    "description": "Imagine an AI that doesn't just read research papers, but actually runs them as software to see if they work. This paper reveals that AI scientists are already beating human researchers 74% of the time in their own executable world.",
+    "pubDate": "Fri, 06 Nov 2026 09:12:31 +0000",
+    "filename": "podcast_202611060912.mp3",
+    "selected_json": "paper_202611060912.json",
+    "tag": "podcast-20261106",
+    "guid": "http://arxiv.org/abs/2611.08478v1",
+    "size": 2899677
   }
 ]
