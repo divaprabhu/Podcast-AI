@@ -838,5 +838,15 @@
     "tag": "podcast-20261106",
     "guid": "http://arxiv.org/abs/2611.08478v1",
     "size": 2899677
+  },
+  {
+    "title": "On Agentic Manipulation Policies",
+    "description": "Imagine a robot that doesn't need a manual or training to operate; it just figures out how to use tools and search for hidden objects on its own. This paper shows generalist AI crushing specialized robot policies by an order of magnitude.",
+    "pubDate": "Mon, 09 Nov 2026 09:16:16 +0000",
+    "filename": "podcast_202611090916.mp3",
+    "selected_json": "paper_202611090916.json",
+    "tag": "podcast-20261109",
+    "guid": "http://arxiv.org/abs/2611.09892v1",
+    "size": 2629532
   }
 ]
