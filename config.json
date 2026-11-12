@@ -7,22 +7,22 @@
   },
   "llm": {
     "default": {
-      "model": "gemma4:31b-cloud",
-      "provider": "ollama_cloud",
+      "model": "openrouter/free",
+      "provider": "openrouter",
       "sleep": 10
     },
     "pipeline": {
       "final_summary": {
-        "model": "gemma4:31b-cloud",
-        "provider": "ollama_cloud"
+        "model": "openrouter/free",
+        "provider": "openrouter"
       },
       "script": {
-        "model": "gemma4:31b-cloud",
-        "provider": "ollama_cloud"
+        "model": "openrouter/free",
+        "provider": "openrouter"
       },
       "selection": {
-        "model": "gemma4:31b-cloud",
-        "provider": "ollama_cloud"
+        "model": "openrouter/free",
+        "provider": "openrouter"
       },
       "summary": {
         "model": "openai/gpt-4o-mini",
