@@ -848,5 +848,15 @@
     "tag": "podcast-20261109",
     "guid": "http://arxiv.org/abs/2611.09892v1",
     "size": 2629532
+  },
+  {
+    "title": "Classical Energies Learn to Reason 1,000x Faster than Looped Models",
+    "description": "An 80s-era energy model crushes modern looped reasoning models by 1,000x on Sudoku and mazes, flipping the script on how we think about AI reasoning and efficiency.",
+    "pubDate": "Sat, 14 Nov 2026 07:50:05 +0000",
+    "filename": "podcast_202611140750.mp3",
+    "selected_json": "paper_202611140750.json",
+    "tag": "podcast-20261114",
+    "guid": "http://arxiv.org/abs/2611.17309v1",
+    "size": 2776268
   }
 ]
