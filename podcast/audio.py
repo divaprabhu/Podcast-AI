@@ -126,7 +126,7 @@ async def _amake_audio(
                 except Exception as e:
                     if attempt == 1:
                         logger.exception(
-                            f"TTS generation failed after 2 attempts: {e}"
+                            f"TTS generation failed after 2 attempts: {e} {turn['text']}"
                         )
                         raise
                     logger.warning(
