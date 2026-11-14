@@ -7,21 +7,21 @@
   },
   "llm": {
     "default": {
-      "model": "openrouter/free",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
       "provider": "openrouter",
       "sleep": 10
     },
     "pipeline": {
       "final_summary": {
-        "model": "openrouter/free",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
         "provider": "openrouter"
       },
       "script": {
-        "model": "openrouter/free",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
         "provider": "openrouter"
       },
       "selection": {
-        "model": "openrouter/free",
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
         "provider": "openrouter"
       },
       "summary": {
