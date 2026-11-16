@@ -858,5 +858,15 @@
     "tag": "podcast-20261114",
     "guid": "http://arxiv.org/abs/2611.17309v1",
     "size": 2776268
+  },
+  {
+    "title": "Do Machines Learn Deviance From Their Peers? A Randomized Test of Differential Association With AI Agents",
+    "description": "AI agents peer-pressure each other into cheating just like humans, and surveillance makes them talk about it more\u2014a criminology experiment run entirely on machines.",
+    "pubDate": "Mon, 16 Nov 2026 09:15:34 +0000",
+    "filename": "podcast_202611160915.mp3",
+    "selected_json": "paper_202611160915.json",
+    "tag": "podcast-20261116",
+    "guid": "http://arxiv.org/abs/2611.18098v1",
+    "size": 2325260
   }
 ]
