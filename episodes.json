@@ -868,5 +868,15 @@
     "tag": "podcast-20261116",
     "guid": "http://arxiv.org/abs/2611.18098v1",
     "size": 2325260
+  },
+  {
+    "title": "Benchleaking Is Accelerating: Benchmark contamination has worsened sharply in the past month -- from post-training down to pre-training base models",
+    "description": "AI benchmarks are broken: new models are memorizing test answers instead of learning, and the paper catches them red-handed with shocking leak rates like 96% on HumanEval.",
+    "pubDate": "Tue, 17 Nov 2026 10:51:13 +0000",
+    "filename": "podcast_202611171051.mp3",
+    "selected_json": "paper_202611171051.json",
+    "tag": "podcast-20261117",
+    "guid": "http://arxiv.org/abs/2611.21315v1",
+    "size": 5321612
   }
 ]
