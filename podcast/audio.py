@@ -102,7 +102,8 @@ async def _amake_audio(
                 else voice_cfg["female_pitch"]
             )
 
-            for attempt in range(2):
+            for attempt in range(3):
+                failure_sleep = tts_sleep ** attempt
                 try:
                     communicate = edge_tts.Communicate(
                         turn["text"], voice, rate=rate, pitch=pitch
@@ -112,28 +113,28 @@ async def _amake_audio(
                     )
                     break
                 except asyncio.TimeoutError:
-                    if attempt == 1:
+                    if attempt == 2:
                         logger.exception(
-                            "TTS timed out after %ss (2 attempts failed)",
+                            "TTS timed out after %ss (3 attempts failed): {e} {turn['text']}",
                             timeout,
                         )
                         raise
                     logger.warning(
                         f"TTS timeout after {timeout}s "
-                        f"(attempt {attempt + 1}/2). Retrying..."
+                        f"(attempt {attempt + 1}/3). Retrying..."
                     )
-                    await asyncio.sleep(tts_sleep)
+                    await asyncio.sleep(failure_sleep)
                 except Exception as e:
-                    if attempt == 1:
+                    if attempt == 2:
                         logger.exception(
                             f"TTS generation failed after 2 attempts: {e} {turn['text']}"
                         )
                         raise
                     logger.warning(
                         f"TTS generation error "
-                        f"(attempt {attempt + 1}/2): {e}. Retrying..."
+                        f"(attempt {attempt + 1}/3): {e}. Retrying..."
                     )
-                    await asyncio.sleep(tts_sleep)
+                    await asyncio.sleep(failure_sleep)
 
             if (
                 not os.path.exists(chunk_path)
