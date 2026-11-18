@@ -50,6 +50,7 @@ async def _amake_audio(
     file_list_path = os.path.join(cache_dir, "concat_list.txt")
 
     existing_up_to = -1
+    logger.info(f"Total audio truns: {len(script)}")
     for idx in range(len(script)):
         chunk_path = os.path.join(chunks_dir, f"chunk_{idx:04d}.mp3")
         if os.path.exists(chunk_path) and os.path.getsize(chunk_path) > 0:
@@ -120,8 +121,8 @@ async def _amake_audio(
                         )
                         raise
                     logger.warning(
-                        f"TTS timeout after {timeout}s "
-                        f"(attempt {attempt + 1}/3). Retrying..."
+                        f"TTS timeout after {timeout}s. Text: {turn['text']}"
+                        f"(attempt {attempt + 1}/3). Retrying after {failure_sleep}s"
                     )
                     await asyncio.sleep(failure_sleep)
                 except Exception as e:
@@ -131,8 +132,8 @@ async def _amake_audio(
                         )
                         raise
                     logger.warning(
-                        f"TTS generation error "
-                        f"(attempt {attempt + 1}/3): {e}. Retrying..."
+                        f"TTS generation error. Text: {turn['text']}"
+                        f"(attempt {attempt + 1}/3): {e}. Retrying after {failure_sleep}s"
                     )
                     await asyncio.sleep(failure_sleep)
 
