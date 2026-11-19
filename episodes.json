@@ -878,5 +878,15 @@
     "tag": "podcast-20261117",
     "guid": "http://arxiv.org/abs/2611.21315v1",
     "size": 5321612
+  },
+  {
+    "title": "Who are you? The Personal Imitation Game",
+    "description": "An AI system pretends to be a specific person so convincingly that the person's own friends are fooled 70% of the time, turning the Turing test into a personal identity crisis.",
+    "pubDate": "Thu, 19 Nov 2026 10:22:30 +0000",
+    "filename": "podcast_202611191022.mp3",
+    "selected_json": "paper_202611191022.json",
+    "tag": "podcast-20261119",
+    "guid": "http://arxiv.org/abs/2611.24888v1",
+    "size": 3463580
   }
 ]
