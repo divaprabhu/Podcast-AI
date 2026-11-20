@@ -888,5 +888,15 @@
     "tag": "podcast-20261119",
     "guid": "http://arxiv.org/abs/2611.24888v1",
     "size": 3463580
+  },
+  {
+    "title": "SoK: Assessing the Evolution of LLM Capability in Software Vulnerability Research",
+    "description": "LLMs are now autonomously finding bugs that survived a decade in critical software, doubling vulnerability disclosures in 2026\u2014but the time to fix them hasn't budged. This paper maps the autonomy of AI hackers like self-driving levels and reveals why more bugs doesn't mean faster patches.",
+    "pubDate": "Fri, 20 Nov 2026 10:24:42 +0000",
+    "filename": "podcast_202611201024.mp3",
+    "selected_json": "paper_202611201024.json",
+    "tag": "podcast-20261120",
+    "guid": "http://arxiv.org/abs/2611.26601v1",
+    "size": 5382812
   }
 ]
