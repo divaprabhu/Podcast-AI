@@ -898,5 +898,15 @@
     "tag": "podcast-20261120",
     "guid": "http://arxiv.org/abs/2611.26601v1",
     "size": 5382812
+  },
+  {
+    "title": "Cleave: Severing Guardrails and Auditing Spectral Coupling in Open-Weight LLMs",
+    "description": "This paper shows you can lobotomize an AI's safety guardrails by tweaking a handful of weights, letting it generate exploits while still refusing other harms, and then gives a way to detect the tampering.",
+    "pubDate": "Mon, 23 Nov 2026 10:42:11 +0000",
+    "filename": "podcast_202611231042.mp3",
+    "selected_json": "paper_202611231042.json",
+    "tag": "podcast-20261123",
+    "guid": "http://arxiv.org/abs/2611.27426v1",
+    "size": 3005660
   }
 ]
