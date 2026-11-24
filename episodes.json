@@ -908,5 +908,15 @@
     "tag": "podcast-20261123",
     "guid": "http://arxiv.org/abs/2611.27426v1",
     "size": 3005660
+  },
+  {
+    "title": "FATCAT: Fault Injection Attacks Targeting Chip-level Alignment",
+    "description": "A physical electromagnetic pulse can silently disable an AI's safety alignment, causing a robot arm to attempt to pinch a researcher -- proving hardware faults can turn aligned models dangerous.",
+    "pubDate": "Tue, 24 Nov 2026 12:29:55 +0000",
+    "filename": "podcast_202611241229.mp3",
+    "selected_json": "paper_202611241229.json",
+    "tag": "podcast-20261124",
+    "guid": "http://arxiv.org/abs/2611.31129v1",
+    "size": 3436508
   }
 ]
