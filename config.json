@@ -7,8 +7,8 @@
   },
   "llm": {
     "default": {
-      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "provider": "openrouter",
+      "model": "gemini-3.5-flash-lite",
+      "provider": "google",
       "sleep": 10
     },
     "pipeline": {
@@ -50,6 +50,10 @@
       },
       "ollama_cloud": {
         "base_url": "https://ollama.com",
+        "timeout": 300
+      },
+      "google": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta",
         "timeout": 300
       }
     }

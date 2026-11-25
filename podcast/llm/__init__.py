@@ -15,6 +15,7 @@ from . import github
 from . import ollama
 from . import lm_studio
 from . import ollama_cloud
+from . import google
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +38,7 @@ _PROVIDERS: dict[str, Any] = {
     "ollama": ollama,
     "lm_studio": lm_studio,
     "ollama_cloud": ollama_cloud,
+    "google": google,
 }
 
 

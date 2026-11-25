@@ -28,7 +28,7 @@ Podcast-AI is a lightweight automated pipeline that transforms a selected arXiv 
 ## ✨ Features
 
 - **📄 Paper Discovery** – Fetches latest papers from arXiv by category
-- **🤖 Multi-Provider LLM** – Supports OpenRouter, Ollama, GitHub, LM Studio, and Ollama Cloud
+- **🤖 Multi-Provider LLM** – Supports OpenRouter, Ollama, GitHub, LM Studio, Ollama Cloud, and Google AI Studio
 - **📝 Smart Summarization** – Chunked PDF summarization + final synthesis
 - **🎤 Natural TTS** – Conversational script generation with `edge-tts`
 - **🎬 Video Assembly** – Combines album art + audio into a shareable video
@@ -120,6 +120,7 @@ Create a `.env` file (or export variables) for any API keys your providers requi
 | `OPENROUTER_API_KEY` | OpenRouter provider |
 | `GH_API_KEY` | GitHub-hosted models |
 | `OLLAMA_API_KEY` | Ollama Cloud provider |
+| `GOOGLE_API_KEY` | Google AI Studio (Gemini) provider |
 | `YOUTUBE_CLIENT_ID` | YouTube upload |
 | `YOUTUBE_CLIENT_SECRET` | YouTube upload |
 | `YOUTUBE_REFRESH_TOKEN` | YouTube upload |
@@ -170,6 +171,7 @@ The project includes a modular LLM layer under `podcast/llm/`. Each provider mod
 | Ollama Cloud | `ollama_cloud.py` | Managed Ollama endpoint |
 | GitHub | `github.py` | GitHub-hosted models (requires `GH_API_KEY`) |
 | LM Studio | `lm_studio.py` | Local LM Studio server |
+| Google | `google.py` | Google AI Studio / Gemini API (requires `GOOGLE_API_KEY`) |
 
 Select and configure your active provider in `config.json` under the `llm` section.
 
@@ -225,7 +227,8 @@ Podcast-AI/
 │       ├── ollama.py
 │       ├── ollama_cloud.py
 │       ├── github.py
-│       └── lm_studio.py
+│       ├── lm_studio.py
+│       └── google.py
 └── .github/workflows/
     └── podcast.yml         # GitHub Actions automation
 ```
