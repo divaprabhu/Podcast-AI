@@ -918,5 +918,15 @@
     "tag": "podcast-20261124",
     "guid": "http://arxiv.org/abs/2611.31129v1",
     "size": 3436508
+  },
+  {
+    "title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+    "description": "AI coding agents writing code to solve visual puzzles achieve far higher accuracy than native video generation models, turning a symbolic approach into a surprising win for visual reasoning.",
+    "pubDate": "Thu, 26 Nov 2026 12:36:27 +0000",
+    "filename": "podcast_202611261236.mp3",
+    "selected_json": "paper_202611261236.json",
+    "tag": "podcast-20261126",
+    "guid": "http://arxiv.org/abs/2611.34813v1",
+    "size": 2531900
   }
 ]
